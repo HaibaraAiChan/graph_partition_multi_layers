@@ -1,0 +1,21 @@
+Using backend: pytorch
+WARNING:root:The OGB package is out of date. Your version is 1.3.2, while the latest version is 1.3.3.
+main start at this time 1648013623.9261389
+-----------------------------------------before load data 
+ Nvidia-smi: 0.1717529296875 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+ogbn-arxiv
+Traceback (most recent call last):
+  File "pseudo_mini_batch_range_arxiv_sage.py", line 435, in <module>
+    main()
+  File "pseudo_mini_batch_range_arxiv_sage.py", line 412, in main
+    data = load_ogbn_dataset(args.dataset,  args)
+  File "../load_graph.py", line 367, in load_ogbn_dataset
+    g = dgl.to_bidirected(g)
+  File "/home/cc/.local/lib/python3.6/site-packages/dgl/transform.py", line 699, in to_bidirected
+    g = to_simple(g, return_counts=None, copy_ndata=copy_ndata, copy_edata=False)
+  File "/home/cc/.local/lib/python3.6/site-packages/dgl/transform.py", line 2435, in to_simple
+    simple_graph_index, counts, edge_maps = _CAPI_DGLToSimpleHetero(g._graph)
+KeyboardInterrupt

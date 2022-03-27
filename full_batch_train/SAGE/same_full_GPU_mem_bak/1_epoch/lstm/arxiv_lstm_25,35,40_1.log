@@ -1,0 +1,102 @@
+Using backend: pytorch
+WARNING:root:The OGB package is out of date. Your version is 1.3.2, while the latest version is 1.3.3.
+main start at this time 1647945896.0311809
+-----------------------------------------before load data 
+ Nvidia-smi: 0.1717529296875 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+ogbn-arxiv
+# Nodes: 169343
+# Edges: 2315598
+# Train: 90941
+# Val: 29799
+# Test: 48603
+# Classes: 40
+
+----------------------------------------start of run function 
+ Nvidia-smi: 0.1717529296875 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+in feats:  128
+----------------------------------------before model to device 
+ Nvidia-smi: 0.1717529296875 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+----------------------------------------after model to device 
+ Nvidia-smi: 1.0213623046875 GB
+    Memory Allocated: 0.005230903625488281  GigaBytes
+Max Memory Allocated: 0.005230903625488281  GigaBytes
+
+----------------------------------------before full batch dataloader 
+ Nvidia-smi: 1.0213623046875 GB
+    Memory Allocated: 0.005230903625488281  GigaBytes
+Max Memory Allocated: 0.005230903625488281  GigaBytes
+
+----------------------------------------after full batch dataloader 
+ Nvidia-smi: 1.0213623046875 GB
+    Memory Allocated: 0.005230903625488281  GigaBytes
+Max Memory Allocated: 0.005230903625488281  GigaBytes
+
+Number of first layer input nodes during this epoch:  167760
+----------------------------------------before load block subtensor 
+ Nvidia-smi: 1.0213623046875 GB
+    Memory Allocated: 0.005230903625488281  GigaBytes
+Max Memory Allocated: 0.005230903625488281  GigaBytes
+
+----------------------------------------before batch input features to device
+ Nvidia-smi: 1.0213623046875 GB
+    Memory Allocated: 0.005230903625488281  GigaBytes
+Max Memory Allocated: 0.005230903625488281  GigaBytes
+
+----------------------------------------after batch input features to device
+ Nvidia-smi: 1.1014404296875 GB
+    Memory Allocated: 0.08530902862548828  GigaBytes
+Max Memory Allocated: 0.08530902862548828  GigaBytes
+
+----------------------------------------after batch labels to device
+ Nvidia-smi: 1.1033935546875 GB
+    Memory Allocated: 0.08598661422729492  GigaBytes
+Max Memory Allocated: 0.08598661422729492  GigaBytes
+
+----------------------------------------after load block subtensor 
+ Nvidia-smi: 1.1033935546875 GB
+    Memory Allocated: 0.08598661422729492  GigaBytes
+Max Memory Allocated: 0.08598661422729492  GigaBytes
+
+----------------------------------------after blocks to device 
+ Nvidia-smi: 1.2069091796875 GB
+    Memory Allocated: 0.11638116836547852  GigaBytes
+Max Memory Allocated: 0.11638116836547852  GigaBytes
+
+----------------------------------------before pred = model(blocks, inputs) 
+ Nvidia-smi: 1.2069091796875 GB
+    Memory Allocated: 0.11638116836547852  GigaBytes
+Max Memory Allocated: 0.11638116836547852  GigaBytes
+
+input nodes number: 167760
+output nodes number: 166642
+edges number: 1567872
+input nodes number: 166642
+output nodes number: 157336
+edges number: 1665156
+input nodes number: 157336
+output nodes number: 90941
+edges number: 846279
+----------------------------------------pred = model(blocks, inputs) 
+ Nvidia-smi: 1.3065185546875 GB
+    Memory Allocated: 0.2036113739013672  GigaBytes
+Max Memory Allocated: 0.2036113739013672  GigaBytes
+
+Traceback (most recent call last):
+  File "full_batch_arxiv_sage_GPU_mem.py", line 467, in <module>
+    main()
+  File "full_batch_arxiv_sage_GPU_mem.py", line 463, in main
+    best_test = run(args, device, data)
+  File "full_batch_arxiv_sage_GPU_mem.py", line 288, in run
+    loss = loss_fcn(pred, full_batch_labels)#------------*
+  File "/home/cc/.local/lib/python3.6/site-packages/torch/nn/functional.py", line 2262, in nll_loss
+    .format(input.size(0), target.size(0)))
+ValueError: Expected input batch_size (167760) to match target batch_size (90941).

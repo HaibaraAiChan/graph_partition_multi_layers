@@ -1,0 +1,889 @@
+main start at this time 1643939741.201595
+karate data
+#nodes: 34
+#edges: 156
+#classes: 2
+success----------------------------------------
+24
+5
+5
+Epoch 0
+cur_subgraph.ndata
+32
+
+cur_subgraph.ndata
+27
+
+Epoch 1
+cur_subgraph.ndata
+32
+
+cur_subgraph.ndata
+27
+
+Epoch 2
+cur_subgraph.ndata
+31
+
+cur_subgraph.ndata
+28
+
+Epoch 3
+cur_subgraph.ndata
+31
+
+cur_subgraph.ndata
+27
+
+Epoch 4
+cur_subgraph.ndata
+32
+
+cur_subgraph.ndata
+27
+
+Epoch 5
+cur_subgraph.ndata
+32
+
+cur_subgraph.ndata
+29
+
+========after full batch subgraphs of data loading===================================================
+6
+Epoch 0
+now we generate block from output to src direction, bottom up direction
+The real block id is  1
+block_to_graph.srcdata
+{'_ID': tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13, 33, 32, 25]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+layer  1
+
+Graph(num_nodes={'_N_src': 27, '_N_dst': 24},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8)}
+tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13])
+{'_ID': tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13, 33, 32, 25]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13, 33, 32, 25])
+block-------
+Block(num_src_nodes={'_N_dst': 24, '_N_src': 15},
+      num_dst_nodes={'_N_dst': 24, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([ 6, 22,  0, 24, 25, 10, 23, 21, 26, 14, 17, 12, 15, 20, 18])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1], dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([ 6, 22,  0, 24, 25, 10, 23, 21, 26, 14, 17, 12, 15, 20, 18])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23])
+tensor([ 1, 11,  0, 33, 32,  2, 13,  7, 25, 12, 10,  3,  5, 16,  6])
+tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46])
+-------------------------------------------
+Block(num_src_nodes=27, num_dst_nodes=24, num_edges=47)
+generate_blocks_for_one_layer function ------ batch:  0
+The real block id is  0
+block_to_graph.srcdata
+{'_ID': tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13, 33, 32, 25, 27, 31, 29, 30, 24]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0, 0, 1, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 1, 0, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+
+Graph(num_nodes={'_N_src': 32, '_N_dst': 27},
+      num_edges={('_N_src', '_E', '_N_dst'): 53},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13, 33, 32, 25]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13, 33, 32, 25])
+{'_ID': tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13, 33, 32, 25, 27, 31, 29, 30, 24]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0, 0, 1, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 1, 0, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13, 33, 32, 25, 27, 31, 29, 30, 24])
+block-------
+Block(num_src_nodes={'_N_dst': 27, '_N_src': 18},
+      num_dst_nodes={'_N_dst': 27, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 53},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([14, 15,  0,  6, 25, 24, 21,  4, 10, 27, 26, 23, 18, 12, 28, 29, 30, 31])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+       dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1],
+       dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0],
+       dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([14, 15,  0,  6, 25, 24, 21,  4, 10, 27, 26, 23, 18, 12, 28, 29, 30, 31])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26])
+tensor([12,  5,  0,  1, 32, 33,  7, 19,  2, 27, 25, 13,  6,  3, 31, 29, 30, 24])
+tensor([ 0, 21,  8, 22, 19, 14,  1, 15,  9, 17,  2, 23,  3,  4, 12,  5, 18, 10,
+         6, 20, 16,  7, 11, 13, 33, 32, 25])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52])
+-------------------------------------------
+Block(num_src_nodes=32, num_dst_nodes=27, num_edges=53)
+generate_blocks_for_one_layer function ------ batch:  0
+
+----main run function: block dataloader generation total  spend:  0.027512
+
+current Epoch training on CPU with block data loading Time(s): 1.2099
+----------------------------------------------------------pseudo_mini_loss sum 23.376548767089844
+Epoch 1
+now we generate block from output to src direction, bottom up direction
+The real block id is  1
+block_to_graph.srcdata
+{'_ID': tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0, 32, 33, 25]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+layer  1
+
+Graph(num_nodes={'_N_src': 27, '_N_dst': 24},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8)}
+tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0])
+{'_ID': tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0, 32, 33, 25]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0, 32, 33, 25])
+block-------
+Block(num_src_nodes={'_N_dst': 24, '_N_src': 13},
+      num_dst_nodes={'_N_dst': 24, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([24, 25, 26, 23,  8, 14,  6, 11,  4, 20, 13, 12, 15])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([24, 25, 26, 23,  8, 14,  6, 11,  4, 20, 13, 12, 15])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23])
+tensor([32, 33, 25,  0,  1,  5,  2,  3,  9, 13,  6, 16, 19])
+tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46])
+-------------------------------------------
+Block(num_src_nodes=27, num_dst_nodes=24, num_edges=47)
+generate_blocks_for_one_layer function ------ batch:  0
+The real block id is  0
+block_to_graph.srcdata
+{'_ID': tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0, 32, 33, 25, 27, 30, 31, 29, 24]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0, 0, 1, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 1, 0, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+
+Graph(num_nodes={'_N_src': 32, '_N_dst': 27},
+      num_edges={('_N_src', '_E', '_N_dst'): 53},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0, 32, 33, 25]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0, 32, 33, 25])
+{'_ID': tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0, 32, 33, 25, 27, 30, 31, 29, 24]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0, 0, 1, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 1, 0, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0, 32, 33, 25, 27, 30, 31, 29, 24])
+block-------
+Block(num_src_nodes={'_N_dst': 27, '_N_src': 19},
+      num_dst_nodes={'_N_dst': 27, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 53},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([24, 25, 27, 23,  8, 14,  6, 11, 16, 15,  3, 20, 13, 12, 28, 29, 19, 30,
+        31])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 0], dtype=torch.uint8), '_N_src': tensor([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0],
+       dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 1], dtype=torch.uint8), '_N_src': tensor([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+       dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0],
+       dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([24, 25, 27, 23,  8, 14,  6, 11, 16, 15,  3, 20, 13, 12, 28, 29, 19, 30,
+        31])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26])
+tensor([32, 33, 27,  0,  1,  5,  2,  3,  7, 19, 10, 13,  6, 16, 30, 31,  8, 29,
+        24])
+tensor([15, 23, 21, 10,  9, 12,  2, 17,  1, 20,  4,  3, 16,  6,  5, 19,  7, 11,
+        18,  8, 13, 14, 22,  0, 32, 33, 25])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52])
+-------------------------------------------
+Block(num_src_nodes=32, num_dst_nodes=27, num_edges=53)
+generate_blocks_for_one_layer function ------ batch:  0
+
+----main run function: block dataloader generation total  spend:  0.033396
+
+current Epoch training on CPU with block data loading Time(s): 0.0050
+----------------------------------------------------------pseudo_mini_loss sum 13.391688346862793
+Epoch 2
+now we generate block from output to src direction, bottom up direction
+The real block id is  1
+block_to_graph.srcdata
+{'_ID': tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20, 33, 30, 32, 25]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+layer  1
+
+Graph(num_nodes={'_N_src': 28, '_N_dst': 24},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8)}
+tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20])
+{'_ID': tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20, 33, 30, 32, 25]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0], dtype=torch.uint8)}
+tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20, 33, 30, 32, 25])
+block-------
+Block(num_src_nodes={'_N_dst': 24, '_N_src': 15},
+      num_dst_nodes={'_N_dst': 24, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([ 5,  7, 15,  2, 24, 16, 21,  1,  4, 25, 26,  8, 27, 20,  3])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1], dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([ 5,  7, 15,  2, 24, 16, 21,  1,  4, 25, 26,  8, 27, 20,  3])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23])
+tensor([ 5,  6,  0, 13, 33,  3, 10,  2,  4, 30, 32,  1, 25, 21, 12])
+tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46])
+-------------------------------------------
+Block(num_src_nodes=28, num_dst_nodes=24, num_edges=47)
+generate_blocks_for_one_layer function ------ batch:  0
+The real block id is  0
+block_to_graph.srcdata
+{'_ID': tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20, 33, 30, 32, 25, 27, 29, 31]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 0, 1, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 1, 0, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+
+Graph(num_nodes={'_N_src': 31, '_N_dst': 28},
+      num_edges={('_N_src', '_E', '_N_dst'): 55},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20, 33, 30, 32, 25]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0], dtype=torch.uint8)}
+tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20, 33, 30, 32, 25])
+{'_ID': tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20, 33, 30, 32, 25, 27, 29, 31]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 0, 1, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 1, 0, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20, 33, 30, 32, 25, 27, 29, 31])
+block-------
+Block(num_src_nodes={'_N_dst': 28, '_N_src': 22},
+      num_dst_nodes={'_N_dst': 28, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 55},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27]), '_N_src': tensor([ 5,  7,  2, 14, 15, 16, 21,  1, 24,  0, 25, 26,  8, 28, 29, 11,  3,  4,
+        30, 22, 10, 13])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0], dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+       dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1], dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0], dtype=torch.uint8), '_N_src': tensor([1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1],
+       dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27]), '_N_src': tensor([ 5,  7,  2, 14, 15, 16, 21,  1, 24,  0, 25, 26,  8, 28, 29, 11,  3,  4,
+        30, 22, 10, 13])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27])
+tensor([ 5,  6, 13,  7,  0,  3, 10,  2, 33, 16, 30, 32,  1, 27, 29, 19, 12,  4,
+        31, 18, 22, 23])
+tensor([16,  2, 13, 12,  4,  5,  9,  6,  1, 14, 22, 19, 17, 23,  7,  0,  3,  8,
+        15, 11, 21, 10, 18, 20, 33, 30, 32, 25])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53,
+        54])
+-------------------------------------------
+Block(num_src_nodes=31, num_dst_nodes=28, num_edges=55)
+generate_blocks_for_one_layer function ------ batch:  0
+
+----main run function: block dataloader generation total  spend:  0.022094
+
+current Epoch training on CPU with block data loading Time(s): 0.0043
+----------------------------------------------------------pseudo_mini_loss sum 9.482658386230469
+Epoch 3
+now we generate block from output to src direction, bottom up direction
+The real block id is  1
+block_to_graph.srcdata
+{'_ID': tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23, 32, 33, 29]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+layer  1
+
+Graph(num_nodes={'_N_src': 27, '_N_dst': 24},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8)}
+tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23])
+{'_ID': tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23, 32, 33, 29]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23, 32, 33, 29])
+block-------
+Block(num_src_nodes={'_N_dst': 24, '_N_src': 15},
+      num_dst_nodes={'_N_dst': 24, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([24, 25, 12,  9,  8, 19, 13, 17, 21, 16, 20,  1,  5, 15, 26])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0], dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([24, 25, 12,  9,  8, 19, 13, 17, 21, 16, 20,  1,  5, 15, 26])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23])
+tensor([32, 33,  5,  6,  0,  1, 13, 10, 12,  4,  2, 16,  3, 21, 29])
+tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46])
+-------------------------------------------
+Block(num_src_nodes=27, num_dst_nodes=24, num_edges=47)
+generate_blocks_for_one_layer function ------ batch:  0
+The real block id is  0
+block_to_graph.srcdata
+{'_ID': tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23, 32, 33, 29, 27, 31, 30, 26]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+
+Graph(num_nodes={'_N_src': 31, '_N_dst': 27},
+      num_edges={('_N_src', '_E', '_N_dst'): 53},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23, 32, 33, 29]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23, 32, 33, 29])
+{'_ID': tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23, 32, 33, 29, 27, 31, 30, 26]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23, 32, 33, 29, 27, 31, 30, 26])
+block-------
+Block(num_src_nodes={'_N_dst': 27, '_N_src': 19},
+      num_dst_nodes={'_N_dst': 27, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 53},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([24, 25, 12,  9,  8, 19, 20, 21,  5, 16,  1, 14, 13,  4, 27, 26, 28, 29,
+        30])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), '_N_src': tensor([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+       dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
+       dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+       dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([24, 25, 12,  9,  8, 19, 20, 21,  5, 16,  1, 14, 13,  4, 27, 26, 28, 29,
+        30])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26])
+tensor([32, 33,  5,  6,  0,  1,  2, 12,  3,  4, 16, 19, 13,  8, 27, 29, 31, 30,
+        26])
+tensor([15, 16, 17, 14,  8,  3, 11, 22,  0,  6,  7, 18,  5, 13, 19, 21,  4, 10,
+        20,  1,  2, 12,  9, 23, 32, 33, 29])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52])
+-------------------------------------------
+Block(num_src_nodes=31, num_dst_nodes=27, num_edges=53)
+generate_blocks_for_one_layer function ------ batch:  0
+
+----main run function: block dataloader generation total  spend:  0.020118
+
+current Epoch training on CPU with block data loading Time(s): 0.0044
+----------------------------------------------------------pseudo_mini_loss sum 25.865671157836914
+Epoch 4
+now we generate block from output to src direction, bottom up direction
+The real block id is  1
+block_to_graph.srcdata
+{'_ID': tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22, 32, 33, 29]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+layer  1
+
+Graph(num_nodes={'_N_src': 27, '_N_dst': 24},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8)}
+tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22])
+{'_ID': tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22, 32, 33, 29]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22, 32, 33, 29])
+block-------
+Block(num_src_nodes={'_N_dst': 24, '_N_src': 13},
+      num_dst_nodes={'_N_dst': 24, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([ 1, 17, 13, 21, 24, 25, 19, 15, 26, 22,  3,  7, 11])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1], dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([ 1, 17, 13, 21, 24, 25, 19, 15, 26, 22,  3,  7, 11])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23])
+tensor([ 5,  6,  0, 10, 32, 33,  2,  1, 29,  3, 13, 19,  4])
+tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46])
+-------------------------------------------
+Block(num_src_nodes=27, num_dst_nodes=24, num_edges=47)
+generate_blocks_for_one_layer function ------ batch:  0
+The real block id is  0
+block_to_graph.srcdata
+{'_ID': tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22, 32, 33, 29, 25, 28, 30, 31, 26]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 0, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 1, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+
+Graph(num_nodes={'_N_src': 32, '_N_dst': 27},
+      num_edges={('_N_src', '_E', '_N_dst'): 53},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22, 32, 33, 29]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8)}
+tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22, 32, 33, 29])
+{'_ID': tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22, 32, 33, 29, 25, 28, 30, 31, 26]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 0, 1, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 1, 0, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22, 32, 33, 29, 25, 28, 30, 31, 26])
+block-------
+Block(num_src_nodes={'_N_dst': 27, '_N_src': 21},
+      num_dst_nodes={'_N_dst': 27, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 53},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([ 1, 17, 21, 24, 25, 13, 22, 15, 19, 27, 14,  4,  6,  3, 11, 28, 29, 30,
+        20, 26, 31])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1], dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0],
+       dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+       dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0], dtype=torch.uint8), '_N_src': tensor([1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0],
+       dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26]), '_N_src': tensor([ 1, 17, 21, 24, 25, 13, 22, 15, 19, 27, 14,  4,  6,  3, 11, 28, 29, 30,
+        20, 26, 31])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26])
+tensor([ 5,  6, 10, 32, 33,  0,  3,  1,  2, 25, 21, 11,  7, 13,  4, 28, 30, 31,
+         8, 29, 26])
+tensor([16,  5, 15, 13, 11, 20,  7, 19,  9, 23, 12,  4, 14,  0, 21,  1, 18,  6,
+        17,  2,  8, 10,  3, 22, 32, 33, 29])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52])
+-------------------------------------------
+Block(num_src_nodes=32, num_dst_nodes=27, num_edges=53)
+generate_blocks_for_one_layer function ------ batch:  0
+
+----main run function: block dataloader generation total  spend:  0.020217
+
+current Epoch training on CPU with block data loading Time(s): 0.0044
+----------------------------------------------------------pseudo_mini_loss sum 10.238198280334473
+Epoch 5
+now we generate block from output to src direction, bottom up direction
+The real block id is  1
+block_to_graph.srcdata
+{'_ID': tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15, 32, 33, 29, 27, 30]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+layer  1
+
+Graph(num_nodes={'_N_src': 29, '_N_dst': 24},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8)}
+tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15])
+{'_ID': tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15, 32, 33, 29, 27, 30]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0], dtype=torch.uint8)}
+tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15, 32, 33, 29, 27, 30])
+block-------
+Block(num_src_nodes={'_N_dst': 24, '_N_src': 17},
+      num_dst_nodes={'_N_dst': 24, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 47},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([24, 25, 14, 19, 21,  2, 15, 20,  8, 18,  4, 26, 27, 28, 12,  6,  5])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+       dtype=torch.uint8), '_N_src': tensor([0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1], dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23]), '_N_src': tensor([24, 25, 14, 19, 21,  2, 15, 20,  8, 18,  4, 26, 27, 28, 12,  6,  5])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23])
+tensor([32, 33,  2,  0,  7,  3, 10,  5,  6,  1,  4, 29, 27, 30, 17, 19, 16])
+tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46])
+-------------------------------------------
+Block(num_src_nodes=29, num_dst_nodes=24, num_edges=47)
+generate_blocks_for_one_layer function ------ batch:  0
+The real block id is  0
+block_to_graph.srcdata
+{'_ID': tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15, 32, 33, 29, 27, 30, 25, 31, 26]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 1, 0, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 1, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+num of batch  1
+
+Graph(num_nodes={'_N_src': 32, '_N_dst': 29},
+      num_edges={('_N_src', '_E', '_N_dst'): 57},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+{'_ID': tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15, 32, 33, 29, 27, 30]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 1], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0], dtype=torch.uint8)}
+tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15, 32, 33, 29, 27, 30])
+{'_ID': tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15, 32, 33, 29, 27, 30, 25, 31, 26]), 'test_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 1, 0, 1, 0], dtype=torch.uint8), 'val_mask': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 1, 0, 1], dtype=torch.uint8), 'train_mask': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0, 0, 0, 0], dtype=torch.uint8)}
+tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15, 32, 33, 29, 27, 30, 25, 31, 26])
+block-------
+Block(num_src_nodes={'_N_dst': 29, '_N_src': 20},
+      num_dst_nodes={'_N_dst': 29, '_N_src': 0},
+      num_edges={('_N_src', '_E', '_N_dst'): 57},
+      metagraph=[('_N_src', '_N_dst', '_E')])
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]), '_N_src': tensor([], dtype=torch.int64)}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 1], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0], dtype=torch.uint8), '_N_src': tensor([], dtype=torch.uint8)}})
+defaultdict(<class 'dict'>, {'_ID': {'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]), '_N_src': tensor([24, 25, 14,  3, 19,  2, 15, 20,  8, 18,  4, 29, 21, 11, 22, 13, 30, 28,
+        26, 31])}, 'test_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        1, 1, 1, 0, 1], dtype=torch.uint8), '_N_src': tensor([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0],
+       dtype=torch.uint8)}, 'val_mask': {'_N_dst': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0], dtype=torch.uint8), '_N_src': tensor([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1],
+       dtype=torch.uint8)}, 'train_mask': {'_N_dst': tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 0, 0, 0], dtype=torch.uint8), '_N_src': tensor([0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0],
+       dtype=torch.uint8)}})
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]), '_N_src': tensor([], dtype=torch.int64)}
+{'_N_dst': tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]), '_N_src': tensor([24, 25, 14,  3, 19,  2, 15, 20,  8, 18,  4, 29, 21, 11, 22, 13, 30, 28,
+        26, 31])}
+layer_src[BB.srcdata[_ID]]
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28])
+tensor([32, 33,  2, 12,  0,  3, 10,  5,  6,  1,  4, 25,  7,  8, 21, 13, 31, 30,
+        29, 26])
+tensor([20,  9,  3, 12,  4, 16, 19, 14,  6, 18, 23,  8, 17, 13,  2, 10, 22, 11,
+         1,  0,  5,  7, 21, 15, 32, 33, 29, 27, 30])
+eid connect check result
+tensor([True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True, True, True, True,
+        True, True, True, True, True, True, True, True, True])
+tensor([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+        18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+        36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53,
+        54, 55, 56])
+-------------------------------------------
+Block(num_src_nodes=32, num_dst_nodes=29, num_edges=57)
+generate_blocks_for_one_layer function ------ batch:  0
+
+----main run function: block dataloader generation total  spend:  0.021161
+
+current Epoch training on CPU with block data loading Time(s): 0.0046
+----------------------------------------------------------pseudo_mini_loss sum 11.955909729003906
+====================================================================================================
+train Acc: 0.666667
+Test Acc: 0.600000
