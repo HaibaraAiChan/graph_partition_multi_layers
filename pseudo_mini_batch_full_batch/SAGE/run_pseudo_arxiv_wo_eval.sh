@@ -19,14 +19,15 @@ run=1
 
 batch_size=(45471 22736 11368 5684 2842 1421)
 
-savePath=../logs/sage/1_runs/pure_train/${Data}
-
 fan_out_list=(25,35,40 25,35,80 25,70,80 50,70,80)
 hiddenList=(32 64 128 256)
 layersList=(3 4 5 6)
 
 pMethodList=(random range) 
 AggreList=(mean lstm)
+
+savePath=../logs/sage/1_runs/pure_train/${Data}
+mkdir ${savePath}
 
 for Aggre in ${AggreList[@]}
 do      
