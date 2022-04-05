@@ -1,6 +1,6 @@
 #!/bin/bash
 
-File=pseudo_mini_batch_range_arxiv_sage.py
+File=pseudo_mini_batch_arxiv_sage.py
 Data=ogbn-arxiv
 epoch=100
 Aggre=mean

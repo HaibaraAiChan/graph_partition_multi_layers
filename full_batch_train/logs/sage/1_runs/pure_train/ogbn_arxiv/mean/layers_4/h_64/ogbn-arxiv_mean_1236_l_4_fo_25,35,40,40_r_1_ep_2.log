@@ -1,0 +1,60 @@
+Using backend: pytorch
+WARNING:root:The OGB package is out of date. Your version is 1.3.2, while the latest version is 1.3.3.
+main start at this time 1648687091.275633
+ogbn-arxiv
+# Nodes: 169343
+# Edges: 2315598
+# Train: 90941
+# Val: 29799
+# Test: 48603
+# Classes: 40
+
+in feats:  128
+Number of first layer input nodes during this epoch:  168149
+----------------------------------------before pred = model(blocks, inputs) 
+ Nvidia-smi: 1.2225341796875 GB
+    Memory Allocated: 0.12492990493774414  GigaBytes
+Max Memory Allocated: 0.12492990493774414  GigaBytes
+
+torch.Size([168149, 128])
+torch.Size([167897, 64])
+torch.Size([166780, 64])
+-----------------------------------------pred = model(blocks, inputs) 
+ Nvidia-smi: 2.0330810546875 GB
+    Memory Allocated: 0.6596083641052246  GigaBytes
+Max Memory Allocated: 0.696601390838623  GigaBytes
+
+times | data loading | block to device | model prediction | loss calculation | loss backward |  optimizer step |
+      |0.0502009391784668 |0.3656482696533203 |0.7732248306274414 |0.00011348724365234375 |0.0668482780456543 |0.0048983097076416016 |
+----------------------------------------------------------pseudo_mini_loss sum 5.418715953826904
+ Run 0| Epoch 0 |
+Number of nodes for computation during this epoch:  660138
+Number of first layer input nodes during this epoch:  168149
+Number of first layer input nodes during this epoch:  168092
+----------------------------------------before pred = model(blocks, inputs) 
+ Nvidia-smi: 2.3494873046875 GB
+    Memory Allocated: 0.14045095443725586  GigaBytes
+Max Memory Allocated: 0.7360091209411621  GigaBytes
+
+torch.Size([168092, 128])
+torch.Size([167860, 64])
+torch.Size([166766, 64])
+-----------------------------------------pred = model(blocks, inputs) 
+ Nvidia-smi: 2.3494873046875 GB
+    Memory Allocated: 0.6612482070922852  GigaBytes
+Max Memory Allocated: 0.7360091209411621  GigaBytes
+
+times | data loading | block to device | model prediction | loss calculation | loss backward |  optimizer step |
+      |0.023540973663330078 |0.021674156188964844 |0.005071401596069336 |0.00011372566223144531 |0.0033597946166992188 |0.0017371177673339844 |
+----------------------------------------------------------pseudo_mini_loss sum 4.358132362365723
+Total dataloading + training time/epoch 0.8379602432250977
+Training time/epoch 0.8378810882568359
+Training time without block to device /epoch 0.8162069320678711
+Training time without total dataloading part /epoch 0.010282039642333984
+load block tensor time/epoch 0.023540973663330078
+block to device time/epoch 0.021674156188964844
+input features size transfer per epoch 1.341104507446289e-07
+blocks size to device per epoch 8.940696716308594e-08
+ Run 0| Epoch 1 |
+Number of nodes for computation during this epoch:  660065
+Number of first layer input nodes during this epoch:  168092

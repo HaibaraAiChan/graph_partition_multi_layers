@@ -187,7 +187,7 @@ def run(args, device, data):
 			
 			t0=0
 			model.train()
-			if epoch >= 10:
+			if epoch >= args.log_indent:
 				t0 = time.time()
 			# Loop over the dataloader to sample the computation dependency graph as a list of blocks.
 			
@@ -254,7 +254,7 @@ def run(args, device, data):
 			print('      |'+str(sum(data_loading_t))+' |'+str(sum(block_to_t))+' |'+str(sum(modeling_t))+' |'+str(sum(loss_cal_t))+' |'+str(sum(backward_t))+' |'+str(sum(opti_t))+' |')
 			print('----------------------------------------------------------pseudo_mini_loss sum ' + str(loss.tolist()))
 		
-			if epoch >= 10:
+			if epoch >= args.log_indent:
 				tmp_t2=time.time()
 				
 				dur.append(time.time() - t0)

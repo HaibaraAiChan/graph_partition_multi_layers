@@ -75,15 +75,15 @@ def parallel_gen_batch_list(idx, nid, batches_nid_list_):
 
 
 class Graph_Partitioner:
-    def __init__(self, block_to_graph, args):
+    def __init__(self, layer_block, args):
         self.balanced_init_ratio=args.balanced_init_ratio
         self.dataset=args.dataset
-        self.block_to_graph=block_to_graph # local graph with global nodes indices
+        self.layer_block=layer_block # local graph with global nodes indices
         self.local=False
-        self.output_nids=block_to_graph.ndata[dgl.NID]['_N_dst'] # tensor type
+        self.output_nids=layer_block.dstdata['_ID'] # tensor type
         self.local_output_nids=[]
-        self.src_nids_list= block_to_graph.srcdata['_ID'].tolist()
-        self.full_src_len=len(block_to_graph.srcdata['_ID'])
+        self.src_nids_list= layer_block.srcdata['_ID'].tolist()
+        self.full_src_len=len(layer_block.srcdata['_ID'])
         self.global_batched_seeds_list=[]
         self.local_batched_seeds_list=[]
         self.weights_list=[]
@@ -102,6 +102,7 @@ class Graph_Partitioner:
         self.time_dict={}
         self.red_before=[]
         self.red_after=[]
+        self.args=args
         
 
     # def global_to_local(self):
@@ -276,19 +277,19 @@ class Graph_Partitioner:
 
 
     def get_in_nodes(self,seeds):
-        in_ids=list(self.block_to_graph.in_edges(seeds))[0].tolist()
+        in_ids=list(self.layer_block.in_edges(seeds))[0].tolist()
         in_ids= list(set(in_ids))
         return in_ids
 
 
     def get_src_nodes(self,seeds):
-        in_ids=list(self.block_to_graph.in_edges(seeds))[0].tolist()
+        in_ids=list(self.layer_block.in_edges(seeds))[0].tolist()
         src_nids= list(set(in_ids+seeds))
         return src_nids
 
 
     def get_src_len(self,seeds):
-        in_ids=list(self.block_to_graph.in_edges(seeds))[0].tolist()
+        in_ids=list(self.layer_block.in_edges(seeds))[0].tolist()
         src_len= len(list(set(in_ids+seeds)))
         return src_len
 
@@ -448,7 +449,7 @@ class Graph_Partitioner:
             
             for idx, nid in enumerate(output):
                 gain=0
-                in_nids=self.block_to_graph.predecessors(nid).tolist()
+                in_nids=self.layer_block.predecessors(nid).tolist()
                 # print('nid \t', nid)
                 # print('in_nids\t', in_nids)
                 if self.side==0:
@@ -515,7 +516,7 @@ class Graph_Partitioner:
     
 
 
-    def walk_terminate_1(self,red_rate):
+    def walk_terminate_1(self,red_rate, update_times):
         
         bestRate =red_rate
         best_bit_dict=self.bit_dict
@@ -531,7 +532,7 @@ class Graph_Partitioner:
         locked_nodes={id:False for id in subgraph_o}
         self.locked_nodes=locked_nodes
 
-        update_times=5
+        # update_times=5
         
         # t_b=time.time()
         for i in range(update_times):
@@ -568,14 +569,15 @@ class Graph_Partitioner:
     
 
     def graph_partition_variant(self):
-        # print(self.block_to_graph)
-        # print(self.block_to_graph.edges())
+        # print(self.layer_block)
+        # print(self.layer_block.edges())
 
         
-        full_batch_subgraph=self.block_to_graph #heterogeneous graph
+        full_batch_subgraph=self.layer_block #heterogeneous graph
         self.bit_dict={}
         print('---------------------------- variant graph partition start---------------------')
-        
+        # if num_batch == 0:
+        #     self.output_nids/
         self.ideal_partition_size=(self.full_src_len/self.num_batch)
     
         src_ids=list(full_batch_subgraph.edges())[0]
@@ -584,7 +586,7 @@ class Graph_Partitioner:
         local_g = dgl.remove_self_loop(local_g)
         # from draw_graph import draw_graph
         # draw_graph(local_g)
-        self.block_to_graph=local_g
+        self.layer_block=local_g
         global block_to_graph
         block_to_graph=local_g
 
@@ -634,12 +636,13 @@ class Graph_Partitioner:
             
             print('\tbefore terminate 1 the average redundancy rate is: ', red_rate)
             print('\t'+'-'*80)
-            walks=5
+            # walks=5
+            walks=self.args.walks
             for walk_step in range(walks):
                 if self.walkterm==1:
                     ti=time.time()
 
-                    improvement,red_rate_after,bit_dict_after=self.walk_terminate_1(red_rate)
+                    improvement,red_rate_after,bit_dict_after=self.walk_terminate_1(red_rate, self.args.update_times)
                     
                     print('\twalk terminate 1 spend time', time.time()-ti)
                     print('\t\t\t\t improvement: ',improvement)

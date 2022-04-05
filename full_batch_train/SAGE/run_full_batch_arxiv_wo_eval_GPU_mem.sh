@@ -20,8 +20,8 @@ fan_out_list=(25,35,40 25,35,80 25,70,80 50,70,80)
 # fan_out=(10,25,10)
 epoch=1
 # Aggre=mean
-AggreList=(lstm)
-# AggreList=(lstm mean)
+# AggreList=(lstm)
+AggreList=(lstm mean)
 
 
 for Aggre in ${AggreList[@]}

@@ -1,0 +1,110 @@
+Using backend: pytorch
+WARNING:root:The OGB package is out of date. Your version is 1.3.2, while the latest version is 1.3.3.
+main start at this time 1648464912.711854
+-----------------------------------------before load data 
+ Nvidia-smi: 0.1717529296875 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+ogbn-arxiv
+# Nodes: 169343
+# Edges: 2315598
+# Train: 90941
+# Val: 29799
+# Test: 48603
+# Classes: 40
+
+in feats:  128
+----------------------------------------before generate_dataloader_block 
+ Nvidia-smi: 1.0213623046875 GB
+    Memory Allocated: 0.005230903625488281  GigaBytes
+Max Memory Allocated: 0.005230903625488281  GigaBytes
+
+The real block id is  2
+get_global_graph_edges_ids_block function  spend 0.026875019073486328
+random selection method range initialization spend 0.006470203399658203
+time for parepare:  0.01881861686706543
+local_output_nid generation:  0.016277551651000977
+local_in_edges_tensor generation:  0.014859676361083984
+mini_batch_src_global generation:  0.014928579330444336
+r_  generation:  0.18827390670776367
+local_output_nid generation:  0.02184772491455078
+local_in_edges_tensor generation:  0.016230106353759766
+mini_batch_src_global generation:  0.019176483154296875
+r_  generation:  0.20048093795776367
+----------------------check_connections_block total spend ----------------------------- 0.596982479095459
+generate_one_block  0.22753381729125977
+generate_one_block  0.22679543495178223
+The real block id is  1
+get_global_graph_edges_ids_block function  spend 0.04567766189575195
+gen group dst list time:  0.007786273956298828
+time for parepare:  0.019730806350708008
+local_output_nid generation:  0.0256500244140625
+local_in_edges_tensor generation:  0.05248880386352539
+mini_batch_src_global generation:  0.056569814682006836
+r_  generation:  0.5564115047454834
+local_output_nid generation:  0.03244829177856445
+local_in_edges_tensor generation:  0.055908203125
+mini_batch_src_global generation:  0.06393098831176758
+r_  generation:  0.5617139339447021
+----------------------check_connections_block total spend ----------------------------- 1.6840953826904297
+generate_one_block  0.7518188953399658
+generate_one_block  0.7429649829864502
+The real block id is  0
+get_global_graph_edges_ids_block function  spend 0.03702855110168457
+gen group dst list time:  0.011956453323364258
+time for parepare:  0.01894235610961914
+local_output_nid generation:  0.030771493911743164
+local_in_edges_tensor generation:  0.051427602767944336
+mini_batch_src_global generation:  0.05794167518615723
+r_  generation:  0.5818288326263428
+local_output_nid generation:  0.03807258605957031
+local_in_edges_tensor generation:  0.06010079383850098
+mini_batch_src_global generation:  0.06618833541870117
+r_  generation:  0.590843915939331
+----------------------check_connections_block total spend ----------------------------- 1.773817777633667
+generate_one_block  0.790560245513916
+generate_one_block  0.7603483200073242
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 1.0213623046875 GB
+    Memory Allocated: 0.005230903625488281  GigaBytes
+Max Memory Allocated: 0.005230903625488281  GigaBytes
+
+connection checking time:  3.4579131603240967
+block generation total time  3.0456924438476562
+average batch blocks generation time:  1.5228462219238281
+----------------------------------------before batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 1.2049560546875 GB
+    Memory Allocated: 0.11617040634155273  GigaBytes
+Max Memory Allocated: 0.11617040634155273  GigaBytes
+
+torch.Size([167411, 128])
+torch.Size([164253, 256])
+Traceback (most recent call last):
+  File "pseudo_mini_batch_range_arxiv_sage.py", line 435, in <module>
+    main()
+  File "pseudo_mini_batch_range_arxiv_sage.py", line 431, in main
+    best_test = run(args, device, data)
+  File "pseudo_mini_batch_range_arxiv_sage.py", line 251, in run
+    batch_pred = model(blocks, batch_inputs)#------------*
+  File "/home/cc/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/cc/graph_partition_multi_layers/pseudo_mini_batch_full_batch/SAGE/graphsage_model_arxiv.py", line 182, in forward
+    x = layer(block, x)
+  File "/home/cc/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/cc/.local/lib/python3.6/site-packages/dgl/nn/pytorch/conv/sageconv.py", line 258, in forward
+    graph.update_all(msg_fn, self._lstm_reducer)
+  File "/home/cc/.local/lib/python3.6/site-packages/dgl/heterograph.py", line 4849, in update_all
+    ndata = core.message_passing(g, message_func, reduce_func, apply_node_func)
+  File "/home/cc/.local/lib/python3.6/site-packages/dgl/core.py", line 337, in message_passing
+    ndata = invoke_udf_reduce(g, rfunc, msgdata, orig_nid=orig_nid)
+  File "/home/cc/.local/lib/python3.6/site-packages/dgl/core.py", line 143, in invoke_udf_reduce
+    bkt_rsts.append(func(nbatch))
+  File "/home/cc/.local/lib/python3.6/site-packages/dgl/nn/pytorch/conv/sageconv.py", line 173, in _lstm_reducer
+    _, (rst, _) = self.lstm(m, h)
+  File "/home/cc/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/cc/.local/lib/python3.6/site-packages/torch/nn/modules/rnn.py", line 582, in forward
+    self.dropout, self.training, self.bidirectional, self.batch_first)
+RuntimeError: CUDA out of memory. Tried to allocate 18.00 MiB (GPU 0; 23.62 GiB total capacity; 21.98 GiB already allocated; 12.44 MiB free; 22.41 GiB reserved in total by PyTorch)

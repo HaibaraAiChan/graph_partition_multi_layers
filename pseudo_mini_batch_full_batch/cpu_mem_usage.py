@@ -39,6 +39,7 @@ def get_memory(str1):
 
 	# check we collected all info
 	assert len(values)==len(_FIELDS)
+	print(str1+str(values))
 	return str1+str(values)
 
 def get_time_memory(tic,str1):

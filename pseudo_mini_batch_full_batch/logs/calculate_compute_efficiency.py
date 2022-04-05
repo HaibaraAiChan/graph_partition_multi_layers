@@ -3,6 +3,10 @@ import numpy as np
 import pandas as pd
 from statistics import mean
 import argparse
+import sys
+
+sys.path.insert(0,'..')
+sys.path.insert(0,'../..')
 
 def get_fan_out(filename):
 	fan_out=filename.split('_')[6]
@@ -16,7 +20,22 @@ def get_num_batch(filename):
 def colored(r, g, b, text):
 	return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
-
+def clear(infile):
+	# print(infile)
+	flag=True
+	f = open(infile,'r')
+	lst = []
+	for line in f:
+		if 'pytorch' in line or line.startswith('Using backend: pytorch'):
+			line = line.replace('Using backend: pytorch',' ')
+			flag=True
+		lst.append(line)
+	f.close()
+	
+	if len(lst) == 0:
+		return [], False
+	
+	return lst, flag
 # def parse_results(filename: str):
 # 	with open(filename) as f:
 # 		epoch_times = []
@@ -125,12 +144,16 @@ def compute_efficiency_full(filename, args,full_input_size=0):
 	core_pure_train=0
 	real_pure_train=0
 	OOM_flag=False
-	with open(filename) as f:
+	
+	# print(filename)
+	f, flag = clear(filename)
+	if flag:
+	# with open(filename) as f:
 		for line in f:
 			line = line.strip()
+			# print(line)
 			if line.startswith("RuntimeError: CUDA out of memory."):
 				OOM_flag=True
-
 			if line.startswith("NumTrainingSamples") or line.startswith('# Train:'):
 				num_output_nid=int(line.split(':')[-1])
 			if line.startswith("Number of nodes for computation during this epoch:"):
@@ -247,7 +270,10 @@ def compute_efficiency(filename, args,full_input_size=0):
 	core_pure_train=0
 	real_pure_train=0
 	OOM_flag=False
-	with open(filename) as f:
+	
+	f, flag = clear(filename)
+	if flag:
+	# with open(filename) as f:
 		for line in f:
 			line = line.strip()
 			if line.startswith("RuntimeError: CUDA out of memory."):
@@ -351,7 +377,8 @@ def compute_efficiency(filename, args,full_input_size=0):
 	
 
 def cal_compute_eff_full_batch( file_in, model, path_1, path_2, args):
-	
+	if 'ogbn' in file_in:
+		file_in = file_in.split('_')[1]
 	dict_full={}
 	
 	fan_out=''
@@ -408,19 +435,25 @@ if __name__=='__main__':
 	
 	print("computation info data collection start ...... " )
 	argparser = argparse.ArgumentParser("info collection")
-	argparser.add_argument('--file', type=str, default='ogbn-arxiv',
-		help="the dataset name we want to collect")
+	# argparser.add_argument('--file', type=str, default='cora')
+	argparser.add_argument('--file', type=str, default='ogbn-arxiv')
 	argparser.add_argument('--model', type=str, default='sage')
+	# argparser.add_argument('--aggre', type=str, default='mean')
 	argparser.add_argument('--aggre', type=str, default='lstm')
-	argparser.add_argument('--selection-method', type=str, default='range')
+	argparser.add_argument('--num-layers', type=int, default=3)
+	# argparser.add_argument('--hidden', type=int, default=32)
+	argparser.add_argument('--hidden', type=int, default=128)
+	# argparser.add_argument('--selection-method', type=str, default='range')
+	argparser.add_argument('--selection-method', type=str, default='random_init_graph_partition')
 	argparser.add_argument('--eval',type=bool, default=False)
 	argparser.add_argument('--epoch-ComputeEfficiency', type=bool, default=False)
 	argparser.add_argument('--epoch-PureTrainComputeEfficiency', type=bool, default=True)
 	argparser.add_argument('--save-path',type=str, default='./')
 	args = argparser.parse_args()
-	file_in=args.file
+	
 	model=args.model+'/'
 	path_1 = '../../full_batch_train/logs/'+model+'1_runs/'
+	# path_1 = '/home/cc/graph_partition_multi_layers/full_batch_train/logs/'+model+'1_runs/'
 	path_2 = model+'1_runs/'
 	if args.eval:
 		path_1+='train_eval/'
@@ -428,11 +461,20 @@ if __name__=='__main__':
 	else:
 		path_1+='pure_train/'
 		path_2+='pure_train/'
-		
-	path_1 += args.aggre  +'/'
-	path_2 += args.aggre +'/'+args.selection_method+'/'
-
+	
+	if 'ogbn' in args.file:
+		args.file = 'ogbn_'+args.file.split('-')[1]
+	file_in=args.file
+	path_1 += args.file   + '/' + args.aggre
+	path_2 += args.file  + '/' + args.aggre + '/' + args.selection_method
+	path_1 += '/layers_' + str(args.num_layers) + '/h_'+str(args.hidden)  +'/'
+	path_2 += '/layers_' + str(args.num_layers) + '/h_'+str(args.hidden)  +'/'
 	print("full batch vs pseudo minibatch  compute efficiency (output nodes/time, input nodes /time):")
+	# print(path_1)
+	# path_1='../../full_batch_train/logs/sage/1_runs/pure_train/cora/lstm/layers_3/h_16'
+	# print(path_1)
+	# path_2 = './sage/1_runs/pure_train/ogbn_arxiv/lstm/random_init_graph_partition/layers_3/h_32/'
+	
 	cal_compute_eff_full_batch(file_in, args.model, path_1, path_2, args)
 	
 		

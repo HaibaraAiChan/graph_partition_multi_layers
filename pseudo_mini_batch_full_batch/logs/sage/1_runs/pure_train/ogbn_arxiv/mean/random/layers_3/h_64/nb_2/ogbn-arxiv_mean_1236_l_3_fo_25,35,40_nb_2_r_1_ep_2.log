@@ -1,0 +1,202 @@
+Using backend: pytorch
+WARNING:root:The OGB package is out of date. Your version is 1.3.2, while the latest version is 1.3.3.
+main start at this time 1648439383.7169313
+-----------------------------------------before load data 
+ Nvidia-smi: 0.1717529296875 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+ogbn-arxiv
+# Nodes: 169343
+# Edges: 2315598
+# Train: 90941
+# Val: 29799
+# Test: 48603
+# Classes: 40
+
+in feats:  128
+----------------------------------------before generate_dataloader_block 
+ Nvidia-smi: 1.0174560546875 GB
+    Memory Allocated: 0.00011539459228515625  GigaBytes
+Max Memory Allocated: 0.00011539459228515625  GigaBytes
+
+The real block id is  2
+get_global_graph_edges_ids_block function  spend 0.023339271545410156
+random selection method range initialization spend 0.006264448165893555
+time for parepare:  0.01890420913696289
+local_output_nid generation:  0.01683211326599121
+local_in_edges_tensor generation:  0.015373945236206055
+mini_batch_src_global generation:  0.012866973876953125
+r_  generation:  0.17002296447753906
+local_output_nid generation:  0.02195286750793457
+local_in_edges_tensor generation:  0.014888763427734375
+mini_batch_src_global generation:  0.01826000213623047
+r_  generation:  0.1811656951904297
+----------------------check_connections_block total spend ----------------------------- 0.5482621192932129
+generate_one_block  0.19832849502563477
+generate_one_block  0.20213532447814941
+The real block id is  1
+get_global_graph_edges_ids_block function  spend 0.03757071495056152
+gen group dst list time:  0.007604122161865234
+time for parepare:  0.019374608993530273
+local_output_nid generation:  0.02476215362548828
+local_in_edges_tensor generation:  0.0480504035949707
+mini_batch_src_global generation:  0.04444575309753418
+r_  generation:  0.4897603988647461
+local_output_nid generation:  0.03135848045349121
+local_in_edges_tensor generation:  0.04737401008605957
+mini_batch_src_global generation:  0.06322216987609863
+r_  generation:  0.5053389072418213
+----------------------check_connections_block total spend ----------------------------- 1.4999732971191406
+generate_one_block  0.6217629909515381
+generate_one_block  0.6307153701782227
+The real block id is  0
+get_global_graph_edges_ids_block function  spend 0.029311656951904297
+gen group dst list time:  0.011819601058959961
+time for parepare:  0.01902031898498535
+local_output_nid generation:  0.030252933502197266
+local_in_edges_tensor generation:  0.04738354682922363
+mini_batch_src_global generation:  0.04573631286621094
+r_  generation:  0.5071530342102051
+local_output_nid generation:  0.03749585151672363
+local_in_edges_tensor generation:  0.05255007743835449
+mini_batch_src_global generation:  0.0594480037689209
+r_  generation:  0.5165696144104004
+----------------------check_connections_block total spend ----------------------------- 1.55198073387146
+generate_one_block  0.6619176864624023
+generate_one_block  0.6535646915435791
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 1.0174560546875 GB
+    Memory Allocated: 0.00011539459228515625  GigaBytes
+Max Memory Allocated: 0.00011539459228515625  GigaBytes
+
+connection checking time:  3.0519540309906006
+block generation total time  2.567960739135742
+average batch blocks generation time:  1.283980369567871
+----------------------------------------before batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 1.2010498046875 GB
+    Memory Allocated: 0.10735559463500977  GigaBytes
+Max Memory Allocated: 0.10735559463500977  GigaBytes
+
+torch.Size([166426, 128])
+torch.Size([162664, 64])
+-----------------------------------------batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 1.7655029296875 GB
+    Memory Allocated: 0.4144144058227539  GigaBytes
+Max Memory Allocated: 0.441251277923584  GigaBytes
+
+----------------------------------------before batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.1151123046875 GB
+    Memory Allocated: 0.11371469497680664  GigaBytes
+Max Memory Allocated: 0.47615575790405273  GigaBytes
+
+torch.Size([166365, 128])
+torch.Size([162607, 64])
+-----------------------------------------batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.1151123046875 GB
+    Memory Allocated: 0.4126853942871094  GigaBytes
+Max Memory Allocated: 0.47615575790405273  GigaBytes
+
+times | data loading | block to device | model prediction | loss calculation | loss backward |  optimizer step |
+      |0.029135823249816895 |0.1537938117980957 |0.365664005279541 |0.00014197826385498047 |0.021175742149353027 |0.0041048526763916016 |
+----------------------------------------------------------pseudo_mini_loss sum 5.209356307983398
+ Run 0| Epoch 0 |
+Number of nodes for computation during this epoch:  927116
+Number of first layer input nodes during this epoch:  332791
+----------------------------------------before generate_dataloader_block 
+ Nvidia-smi: 2.1151123046875 GB
+    Memory Allocated: 0.17027997970581055  GigaBytes
+Max Memory Allocated: 0.47615575790405273  GigaBytes
+
+The real block id is  2
+get_global_graph_edges_ids_block function  spend 0.026993274688720703
+random selection method range initialization spend 0.005771160125732422
+time for parepare:  0.02024555206298828
+local_output_nid generation:  0.016417264938354492
+local_in_edges_tensor generation:  0.01939845085144043
+mini_batch_src_global generation:  0.015044927597045898
+r_  generation:  0.1756439208984375
+local_output_nid generation:  0.02373504638671875
+local_in_edges_tensor generation:  0.014762639999389648
+mini_batch_src_global generation:  0.018387794494628906
+r_  generation:  0.1809864044189453
+----------------------check_connections_block total spend ----------------------------- 0.5685672760009766
+generate_one_block  0.19778704643249512
+generate_one_block  0.19964361190795898
+The real block id is  1
+get_global_graph_edges_ids_block function  spend 0.05267190933227539
+gen group dst list time:  0.007575511932373047
+time for parepare:  0.019318103790283203
+local_output_nid generation:  0.02438807487487793
+local_in_edges_tensor generation:  0.06359100341796875
+mini_batch_src_global generation:  0.048818111419677734
+r_  generation:  0.4831690788269043
+local_output_nid generation:  0.03155517578125
+local_in_edges_tensor generation:  0.049219608306884766
+mini_batch_src_global generation:  0.05863499641418457
+r_  generation:  0.5044307708740234
+----------------------check_connections_block total spend ----------------------------- 1.5103886127471924
+generate_one_block  0.6326286792755127
+generate_one_block  0.643035888671875
+The real block id is  0
+get_global_graph_edges_ids_block function  spend 0.04082179069519043
+gen group dst list time:  0.012101411819458008
+time for parepare:  0.018906831741333008
+local_output_nid generation:  0.03312873840332031
+local_in_edges_tensor generation:  0.051184654235839844
+mini_batch_src_global generation:  0.04692244529724121
+r_  generation:  0.5145392417907715
+local_output_nid generation:  0.038239479064941406
+local_in_edges_tensor generation:  0.05710887908935547
+mini_batch_src_global generation:  0.057001352310180664
+r_  generation:  0.5273005962371826
+----------------------check_connections_block total spend ----------------------------- 1.5874156951904297
+generate_one_block  0.6660618782043457
+generate_one_block  0.6571333408355713
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 2.1151123046875 GB
+    Memory Allocated: 0.17027997970581055  GigaBytes
+Max Memory Allocated: 0.47615575790405273  GigaBytes
+
+connection checking time:  3.097804307937622
+block generation total time  2.5988597869873047
+average batch blocks generation time:  1.2994298934936523
+block dataloader generation time/epoch 7.5461344718933105
+----------------------------------------before batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.1151123046875 GB
+    Memory Allocated: 0.11391019821166992  GigaBytes
+Max Memory Allocated: 0.47615575790405273  GigaBytes
+
+torch.Size([166363, 128])
+torch.Size([162589, 64])
+-----------------------------------------batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.1151123046875 GB
+    Memory Allocated: 0.41350412368774414  GigaBytes
+Max Memory Allocated: 0.47615575790405273  GigaBytes
+
+----------------------------------------before batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.1151123046875 GB
+    Memory Allocated: 0.11505270004272461  GigaBytes
+Max Memory Allocated: 0.47615575790405273  GigaBytes
+
+torch.Size([166404, 128])
+torch.Size([162595, 64])
+-----------------------------------------batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.1151123046875 GB
+    Memory Allocated: 0.4150714874267578  GigaBytes
+Max Memory Allocated: 0.47615575790405273  GigaBytes
+
+times | data loading | block to device | model prediction | loss calculation | loss backward |  optimizer step |
+      |0.042613863945007324 |0.023819923400878906 |0.003893733024597168 |0.00010955333709716797 |0.00388181209564209 |0.0029172897338867188 |
+----------------------------------------------------------pseudo_mini_loss sum 4.042018890380859
+Total (block generation + training)time/epoch 7.7346436977386475
+Training time/epoch 0.1882181167602539
+Training time without block to device /epoch 0.1405782699584961
+Training time without total dataloading part /epoch 0.01868748664855957
+load block tensor time/epoch 0.08522772789001465
+block to device time/epoch 0.04763984680175781
+input features size transfer per epoch 2.682209014892578e-07
+blocks size to device per epoch 1.7881393432617188e-07
+ Run 0| Epoch 1 |
+Number of nodes for computation during this epoch:  927327
+Number of first layer input nodes during this epoch:  332767

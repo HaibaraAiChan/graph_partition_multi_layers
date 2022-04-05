@@ -1,0 +1,418 @@
+Using backend: pytorch
+WARNING:root:The OGB package is out of date. Your version is 1.3.2, while the latest version is 1.3.3.
+main start at this time 1648653062.2505057
+-----------------------------------------before load data 
+ Nvidia-smi: 0.1717529296875 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+ogbn-arxiv
+# Nodes: 169343
+# Edges: 2315598
+# Train: 90941
+# Val: 29799
+# Test: 48603
+# Classes: 40
+
+in feats:  128
+----------------------------------------before generate_dataloader_block 
+ Nvidia-smi: 1.0174560546875 GB
+    Memory Allocated: 0.0001811981201171875  GigaBytes
+Max Memory Allocated: 0.0001811981201171875  GigaBytes
+
+{'VmPeak': 20926.52734375, 'VmSize': 20916.234375, 'VmHWM': 3754.54296875, 'VmRSS': 3754.54296875}
+The real block id is  4
+get_global_graph_edges_ids_block function  spend 0.024412155151367188
+global_2_local 0.02761220932006836
+---------------------------- variant graph partition start---------------------
+random_init for graph_partition spend:  0.010669946670532227
+before graph partition 
+		134521, 134493, 
+
+{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
+
+-------------------------------------------------------------  compare batch pair  (0,1)
+				 list len:
+				45471, 45470, 
+
+
+	preparing two sides time :  0.1173255443572998
+	Initialize BitList time :  0.008392810821533203
+	getRedundancyCost: time   8.106231689453125e-06
+
+					length of partitions 134521, 134493
+
+	before terminate 1 the average redundancy rate is:  1.7090128264584616
+	--------------------------------------------------------------------------------
+	 walk terminate 1 start-------
+						 current side  0
+			 redundancy will reduce  0.24188578797908633
+			 the number of node to move is : 26525
+			 --group redundancy rate update  step :0  side 0
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4671270384793753,  1.040855351345857,  1.893398725612894
+						 current side  1
+			 redundancy will reduce  0.23253435318183824
+			 the number of node to move is : 5835
+			 --group redundancy rate update  step :1  side 1
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4764784732766234,  1.1336200598441004,  1.8193368867091462
+						 current side  0
+			 redundancy will reduce  0.2614971189703257
+			 the number of node to move is : 2068
+			 --group redundancy rate update  step :2  side 0
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.447515707488136,  1.0604857409677972,  1.8345456740084747
+	walk terminate 1 spend time 146.61338186264038
+				 improvement:  True
+	 walk terminate 1 start-------
+						 current side  1
+			 redundancy will reduce  0.25466142342559817
+			 the number of node to move is : 4904
+			 --group redundancy rate update  step :0  side 1
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4543514030328635,  1.1469483955809388,  1.761754410484788
+						 current side  0
+			 redundancy will reduce  0.28747403261566995
+			 the number of node to move is : 2207
+			 --group redundancy rate update  step :1  side 0
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4215387938427917,  1.0630014802203178,  1.7800761074652656
+						 current side  1
+			 redundancy will reduce  0.29138740478625724
+			 the number of node to move is : 1203
+			 --group redundancy rate update  step :2  side 1
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4176254216722044,  1.0779688581974347,  1.7572819851469739
+	walk terminate 1 spend time 147.02252888679504
+				 improvement:  True
+0
+side is 1
+	 walk step 1  partition 
+		84841, 138306, 
+
+
+	--------------------------------------------------end of batch 0
+after graph partition
+graph partition algorithm spend time 294.2985575199127
+partition_len_list
+[84841, 138306]
+random_init_graph_partition selection method range initialization spend 294.3820216655731
+time for parepare:  0.01673722267150879
+local_output_nid generation:  0.008045196533203125
+local_in_edges_tensor generation:  0.02878427505493164
+mini_batch_src_global generation:  0.004662036895751953
+r_  generation:  0.07427024841308594
+local_output_nid generation:  0.02454400062561035
+local_in_edges_tensor generation:  0.020537137985229492
+mini_batch_src_global generation:  0.02280116081237793
+r_  generation:  0.2471785545349121
+----------------------check_connections_block total spend ----------------------------- 0.5426580905914307
+generate_one_block  0.10350489616394043
+generate_one_block  0.3066689968109131
+The real block id is  3
+get_global_graph_edges_ids_block function  spend 0.06466341018676758
+gen group dst list time:  0.006602287292480469
+time for parepare:  0.023457050323486328
+local_output_nid generation:  0.02206563949584961
+local_in_edges_tensor generation:  0.04327988624572754
+mini_batch_src_global generation:  0.0340728759765625
+r_  generation:  0.3482239246368408
+local_output_nid generation:  0.04661059379577637
+local_in_edges_tensor generation:  0.05181884765625
+mini_batch_src_global generation:  0.05727505683898926
+r_  generation:  0.538794755935669
+----------------------check_connections_block total spend ----------------------------- 1.3872954845428467
+generate_one_block  0.4676072597503662
+generate_one_block  0.6981143951416016
+The real block id is  2
+get_global_graph_edges_ids_block function  spend 0.05216217041015625
+gen group dst list time:  0.011166095733642578
+time for parepare:  0.023396968841552734
+local_output_nid generation:  0.03982686996459961
+local_in_edges_tensor generation:  0.05774402618408203
+mini_batch_src_global generation:  0.05804872512817383
+r_  generation:  0.5603451728820801
+local_output_nid generation:  0.0478513240814209
+local_in_edges_tensor generation:  0.05800938606262207
+mini_batch_src_global generation:  0.07134246826171875
+r_  generation:  0.602306604385376
+----------------------check_connections_block total spend ----------------------------- 1.7937836647033691
+generate_one_block  0.715266227722168
+generate_one_block  0.7281723022460938
+The real block id is  1
+get_global_graph_edges_ids_block function  spend 0.08706140518188477
+gen group dst list time:  0.016846895217895508
+time for parepare:  0.018425941467285156
+local_output_nid generation:  0.03449106216430664
+local_in_edges_tensor generation:  0.05863022804260254
+mini_batch_src_global generation:  0.05058431625366211
+r_  generation:  0.5536370277404785
+local_output_nid generation:  0.044843435287475586
+local_in_edges_tensor generation:  0.09057188034057617
+mini_batch_src_global generation:  0.06726861000061035
+r_  generation:  0.5734801292419434
+----------------------check_connections_block total spend ----------------------------- 1.7621281147003174
+generate_one_block  0.7181057929992676
+generate_one_block  0.7094576358795166
+The real block id is  0
+get_global_graph_edges_ids_block function  spend 0.04250311851501465
+gen group dst list time:  0.013922691345214844
+time for parepare:  0.019028663635253906
+local_output_nid generation:  0.03558945655822754
+local_in_edges_tensor generation:  0.06268119812011719
+mini_batch_src_global generation:  0.05005645751953125
+r_  generation:  0.5280077457427979
+local_output_nid generation:  0.041647911071777344
+local_in_edges_tensor generation:  0.03896164894104004
+mini_batch_src_global generation:  0.05902981758117676
+r_  generation:  0.5337061882019043
+----------------------check_connections_block total spend ----------------------------- 1.6246788501739502
+generate_one_block  0.6527547836303711
+generate_one_block  0.6596107482910156
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 1.0174560546875 GB
+    Memory Allocated: 0.0001811981201171875  GigaBytes
+Max Memory Allocated: 0.0001811981201171875  GigaBytes
+
+{'VmPeak': 21744.0859375, 'VmSize': 21671.77734375, 'VmHWM': 4786.83984375, 'VmRSS': 4714.75390625}
+connection checking time:  6.567886114120483
+block generation total time  5.3490891456604
+average batch blocks generation time:  2.6745445728302
+----------------------------------------before batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 1.2205810546875 GB
+    Memory Allocated: 0.12767601013183594  GigaBytes
+Max Memory Allocated: 0.12767601013183594  GigaBytes
+
+{'VmPeak': 21927.7734375, 'VmSize': 21895.77734375, 'VmHWM': 4793.203125, 'VmRSS': 4776.515625}
+torch.Size([167289, 128])
+torch.Size([166439, 64])
+torch.Size([163424, 64])
+torch.Size([148945, 64])
+-----------------------------------------batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.0760498046875 GB
+    Memory Allocated: 0.7203288078308105  GigaBytes
+Max Memory Allocated: 0.7369370460510254  GigaBytes
+
+{'VmPeak': 23251.98828125, 'VmSize': 23219.9921875, 'VmHWM': 5223.0078125, 'VmRSS': 5223.0078125}
+----------------------------------------before batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.3729248046875 GB
+    Memory Allocated: 0.14101839065551758  GigaBytes
+Max Memory Allocated: 0.7584443092346191  GigaBytes
+
+{'VmPeak': 23685.92578125, 'VmSize': 23591.890625, 'VmHWM': 5306.63671875, 'VmRSS': 5245.37109375}
+torch.Size([167802, 128])
+torch.Size([167420, 64])
+torch.Size([166291, 64])
+torch.Size([161629, 64])
+-----------------------------------------batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.4139404296875 GB
+    Memory Allocated: 0.8242940902709961  GigaBytes
+Max Memory Allocated: 0.8596897125244141  GigaBytes
+
+{'VmPeak': 23687.88671875, 'VmSize': 23655.890625, 'VmHWM': 5306.63671875, 'VmRSS': 5245.37109375}
+times | data loading | block to device | model prediction | loss calculation | loss backward |  optimizer step |
+      |0.05181479454040527 |0.21399450302124023 |0.3791853189468384 |0.00020039081573486328 |0.07477974891662598 |0.005987882614135742 |
+----------------------------------------------------------pseudo_mini_loss sum 5.375101566314697
+ Run 0| Epoch 0 |
+Number of nodes for computation during this epoch:  1532386
+Number of first layer input nodes during this epoch:  335091
+----------------------------------------before generate_dataloader_block 
+ Nvidia-smi: 2.4549560546875 GB
+    Memory Allocated: 0.2664947509765625  GigaBytes
+Max Memory Allocated: 0.8906588554382324  GigaBytes
+
+{'VmPeak': 23751.88671875, 'VmSize': 23719.890625, 'VmHWM': 5306.63671875, 'VmRSS': 5245.80859375}
+The real block id is  4
+get_global_graph_edges_ids_block function  spend 0.01894235610961914
+global_2_local 0.027778148651123047
+---------------------------- variant graph partition start---------------------
+random_init for graph_partition spend:  0.01111149787902832
+before graph partition 
+		135055, 134419, 
+
+{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
+
+-------------------------------------------------------------  compare batch pair  (0,1)
+				 list len:
+				45471, 45470, 
+
+
+	preparing two sides time :  0.11863899230957031
+	Initialize BitList time :  0.008072614669799805
+	getRedundancyCost: time   7.152557373046875e-06
+
+					length of partitions 135055, 134419
+
+	before terminate 1 the average redundancy rate is:  1.712054791039276
+	--------------------------------------------------------------------------------
+	 walk terminate 1 start-------
+						 current side  0
+			 redundancy will reduce  0.23488227296407826
+			 the number of node to move is : 26515
+			 --group redundancy rate update  step :0  side 0
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4771725180751978,  1.065159658953735,  1.8891853771966607
+						 current side  1
+			 redundancy will reduce  0.22597491708916229
+			 the number of node to move is : 5869
+			 --group redundancy rate update  step :1  side 1
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4860798739501138,  1.1575877711279685,  1.8145719767722588
+						 current side  0
+			 redundancy will reduce  0.2517630465444287
+			 the number of node to move is : 2101
+			 --group redundancy rate update  step :2  side 0
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4602917444948473,  1.0901155033736134,  1.8304679856160815
+	walk terminate 1 spend time 145.7433831691742
+				 improvement:  True
+	 walk terminate 1 start-------
+						 current side  1
+			 redundancy will reduce  0.2458989313714277
+			 the number of node to move is : 5003
+			 --group redundancy rate update  step :0  side 1
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4661558596678483,  1.178159824140078,  1.7541518951956188
+						 current side  0
+			 redundancy will reduce  0.27690949059073144
+			 the number of node to move is : 2191
+			 --group redundancy rate update  step :1  side 0
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4351453004485446,  1.0972058094766135,  1.7730847914204755
+						 current side  1
+			 redundancy will reduce  0.28081042961155767
+			 the number of node to move is : 1267
+			 --group redundancy rate update  step :2  side 1
+			 redundancy rate (ration_mean, ratio_A, ratio_B): 1.4312443614277184,  1.113864216826135,  1.7486245060293015
+	walk terminate 1 spend time 150.50221943855286
+				 improvement:  True
+0
+side is 1
+	 walk step 1  partition 
+		87660, 137615, 
+
+
+	--------------------------------------------------end of batch 0
+after graph partition
+graph partition algorithm spend time 296.88604974746704
+partition_len_list
+[87660, 137615]
+random_init_graph_partition selection method range initialization spend 296.97079491615295
+time for parepare:  0.017705917358398438
+local_output_nid generation:  0.006875276565551758
+local_in_edges_tensor generation:  0.02411365509033203
+mini_batch_src_global generation:  0.005514383316040039
+r_  generation:  0.07761621475219727
+local_output_nid generation:  0.021425724029541016
+local_in_edges_tensor generation:  0.02048778533935547
+mini_batch_src_global generation:  0.025743484497070312
+r_  generation:  0.24693012237548828
+----------------------check_connections_block total spend ----------------------------- 0.537736177444458
+generate_one_block  0.10706162452697754
+generate_one_block  0.3074674606323242
+The real block id is  3
+get_global_graph_edges_ids_block function  spend 0.04487347602844238
+gen group dst list time:  0.006780147552490234
+time for parepare:  0.023532390594482422
+local_output_nid generation:  0.020189762115478516
+local_in_edges_tensor generation:  0.05794405937194824
+mini_batch_src_global generation:  0.038646697998046875
+r_  generation:  0.37629127502441406
+local_output_nid generation:  0.04076695442199707
+local_in_edges_tensor generation:  0.0548396110534668
+mini_batch_src_global generation:  0.05772709846496582
+r_  generation:  0.5465331077575684
+----------------------check_connections_block total spend ----------------------------- 1.4673123359680176
+generate_one_block  0.5032918453216553
+generate_one_block  0.6931567192077637
+The real block id is  2
+get_global_graph_edges_ids_block function  spend 0.029371023178100586
+gen group dst list time:  0.011325597763061523
+time for parepare:  0.02104043960571289
+local_output_nid generation:  0.03575396537780762
+local_in_edges_tensor generation:  0.06135439872741699
+mini_batch_src_global generation:  0.0531158447265625
+r_  generation:  0.5678834915161133
+local_output_nid generation:  0.043062448501586914
+local_in_edges_tensor generation:  0.05470728874206543
+mini_batch_src_global generation:  0.06370997428894043
+r_  generation:  0.5954465866088867
+----------------------check_connections_block total spend ----------------------------- 1.759171962738037
+generate_one_block  0.7074551582336426
+generate_one_block  0.7239818572998047
+The real block id is  1
+get_global_graph_edges_ids_block function  spend 0.03207850456237793
+gen group dst list time:  0.016409873962402344
+time for parepare:  0.01928400993347168
+local_output_nid generation:  0.03303027153015137
+local_in_edges_tensor generation:  0.06712102890014648
+mini_batch_src_global generation:  0.050678253173828125
+r_  generation:  0.5459315776824951
+local_output_nid generation:  0.04063224792480469
+local_in_edges_tensor generation:  0.04993772506713867
+mini_batch_src_global generation:  0.0674753189086914
+r_  generation:  0.5663583278656006
+----------------------check_connections_block total spend ----------------------------- 1.7073867321014404
+generate_one_block  0.6818816661834717
+generate_one_block  0.7336165904998779
+The real block id is  0
+get_global_graph_edges_ids_block function  spend 0.02823352813720703
+gen group dst list time:  0.011344671249389648
+time for parepare:  0.019326448440551758
+local_output_nid generation:  0.03662919998168945
+local_in_edges_tensor generation:  0.048285484313964844
+mini_batch_src_global generation:  0.0471041202545166
+r_  generation:  0.5127468109130859
+local_output_nid generation:  0.04241776466369629
+local_in_edges_tensor generation:  0.06360197067260742
+mini_batch_src_global generation:  0.058896541595458984
+r_  generation:  0.5275557041168213
+----------------------check_connections_block total spend ----------------------------- 1.6110172271728516
+generate_one_block  0.6425273418426514
+generate_one_block  0.6518583297729492
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 2.4549560546875 GB
+    Memory Allocated: 0.2664947509765625  GigaBytes
+Max Memory Allocated: 0.8906588554382324  GigaBytes
+
+{'VmPeak': 24634.5234375, 'VmSize': 24568.17578125, 'VmHWM': 6114.56640625, 'VmRSS': 6048.3125}
+connection checking time:  6.544888257980347
+block generation total time  5.337769508361816
+average batch blocks generation time:  2.668884754180908
+block dataloader generation time/epoch 310.98133516311646
+----------------------------------------before batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.4549560546875 GB
+    Memory Allocated: 0.13882160186767578  GigaBytes
+Max Memory Allocated: 0.8906588554382324  GigaBytes
+
+{'VmPeak': 24649.12890625, 'VmSize': 24567.42578125, 'VmHWM': 6125.94140625, 'VmRSS': 6044.23828125}
+torch.Size([167320, 128])
+torch.Size([166488, 64])
+torch.Size([163533, 64])
+torch.Size([149252, 64])
+-----------------------------------------batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.4549560546875 GB
+    Memory Allocated: 0.7271008491516113  GigaBytes
+Max Memory Allocated: 0.8906588554382324  GigaBytes
+
+{'VmPeak': 24649.12890625, 'VmSize': 24567.42578125, 'VmHWM': 6125.94140625, 'VmRSS': 6044.23828125}
+----------------------------------------before batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.4569091796875 GB
+    Memory Allocated: 0.14125871658325195  GigaBytes
+Max Memory Allocated: 0.8906588554382324  GigaBytes
+
+{'VmPeak': 24649.35546875, 'VmSize': 24567.42578125, 'VmHWM': 6125.9921875, 'VmRSS': 6046.125}
+torch.Size([167784, 128])
+torch.Size([167409, 64])
+torch.Size([166320, 64])
+torch.Size([161665, 64])
+-----------------------------------------batch_pred = model(blocks, batch_inputs) 
+ Nvidia-smi: 2.4569091796875 GB
+    Memory Allocated: 0.823030948638916  GigaBytes
+Max Memory Allocated: 0.8906588554382324  GigaBytes
+
+{'VmPeak': 24649.35546875, 'VmSize': 24567.42578125, 'VmHWM': 6125.9921875, 'VmRSS': 6046.125}
+times | data loading | block to device | model prediction | loss calculation | loss backward |  optimizer step |
+      |0.06483519077301025 |0.039193034172058105 |0.006234288215637207 |0.00012159347534179688 |0.00781714916229248 |0.0047380924224853516 |
+----------------------------------------------------------pseudo_mini_loss sum 4.40104341506958
+Total (block generation + training)time/epoch 311.2980020046234
+Training time/epoch 0.31631970405578613
+Training time without block to device /epoch 0.23793363571166992
+Training time without total dataloading part /epoch 0.03308415412902832
+load block tensor time/epoch 0.1296703815460205
+block to device time/epoch 0.07838606834411621
+input features size transfer per epoch 2.682209014892578e-07
+blocks size to device per epoch 2.384185791015625e-07
+ Run 0| Epoch 1 |
+Number of nodes for computation during this epoch:  1535046
+Number of first layer input nodes during this epoch:  335104

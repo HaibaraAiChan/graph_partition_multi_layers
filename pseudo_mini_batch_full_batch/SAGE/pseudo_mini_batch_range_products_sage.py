@@ -219,9 +219,11 @@ def run(args, device, data):
 			# start of data preprocessing part---s---------s--------s-------------s--------s------------s--------s----
 			if args.GPUmem:
 				see_memory_usage("----------------------------------------before generate_dataloader_block ")
+				get_memory("")
 			block_dataloader, weights_list, time_collection = generate_dataloader_block(g, full_batch_dataloader, args)
 			if args.GPUmem:
 				see_memory_usage("-----------------------------------------after block dataloader generation ")
+				get_memory("")
 			connect_check_time, block_gen_time_total, batch_blocks_gen_time =time_collection
 			print('connection checking time: ', connect_check_time)
 			print('block generation total time ', block_gen_time_total)
@@ -266,12 +268,14 @@ def run(args, device, data):
 				# Compute loss and prediction
 				if args.GPUmem:
 					see_memory_usage("----------------------------------------before batch_pred = model(blocks, batch_inputs) ")
+					get_memory("")
 				tt3=time.time()
 				batch_pred = model(blocks, batch_inputs)#------------*
 				tt4=time.time()
 				modeling_t.append(tt4-tt3)
 				if args.GPUmem:
 					see_memory_usage("-----------------------------------------batch_pred = model(blocks, batch_inputs) ")
+					get_memory("")
 				pseudo_mini_loss = loss_fcn(batch_pred, batch_labels)#------------*
 				
 				# print('----------------------------------------------------------pseudo_mini_loss ', pseudo_mini_loss)

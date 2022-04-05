@@ -7,53 +7,62 @@ import numpy as np
 import pandas as pd
 import argparse
 # import time
+import sys
+sys.path.insert(0,'..')
+sys.path.insert(0,'../..')
 
 def colored(r, g, b, text):
 	return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
 
-def parse_results(filename: str):
-	with open(filename) as f:
-		epoch_times = []
-		train_times=[]
-		connect_checking_times=[]
-		block_gen_times=[]
-		batch_gen_times=[]
-		final_train_acc = ""
-		final_test_acc = ""
+# def parse_results(filename: str):
+# 	if not clear(filename):
+# 		print('-----------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+# 	with open(filename) as f:
+# 		epoch_times = []
+# 		train_times=[]
+# 		connect_checking_times=[]
+# 		block_gen_times=[]
+# 		batch_gen_times=[]
+# 		final_train_acc = ""
+# 		final_test_acc = ""
 
-		for line in f:
-			line = line.strip()
-			if line.startswith("Total (block generation + training)time/epoch"):
-				epoch_times.append(float(line.split(' ')[-1]))
-			if line.startswith("Training time/epoch"):
-				train_times.append(float(line.split(' ')[-1]))
-			if line.startswith("Final Train"):
-				final_train_acc = line.split(":")[-1]
-			if line.startswith("Final Test"):
-				final_test_acc = line.split(":")[-1]
-			if line.startswith("connection checking time:"):
-				connect_checking_times.append(float(line.split(' ')[-1]))
-			if line.startswith("block generation total time"):
-				block_gen_times.append(float(line.split(' ')[-1]))
-			if line.startswith("average batch blocks generation time:"):
-				batch_gen_times.append(float(line.split(' ')[-1]))
+# 		for line in f:
+# 			line = line.strip()
+# 			if line.startswith("Total (block generation + training)time/epoch"):
+# 				epoch_times.append(float(line.split(' ')[-1]))
+# 			if line.startswith("Training time/epoch"):
+# 				train_times.append(float(line.split(' ')[-1]))
+# 			if line.startswith("Final Train"):
+# 				final_train_acc = line.split(":")[-1]
+# 			if line.startswith("Final Test"):
+# 				final_test_acc = line.split(":")[-1]
+# 			if line.startswith("connection checking time:"):
+# 				connect_checking_times.append(float(line.split(' ')[-1]))
+# 			if line.startswith("block generation total time"):
+# 				block_gen_times.append(float(line.split(' ')[-1]))
+# 			if line.startswith("average batch blocks generation time:"):
+# 				batch_gen_times.append(float(line.split(' ')[-1]))
 			
 			
 			
 			
-		return {"epoch_time": np.array(epoch_times)[-10:].mean(),
+# 		return {"epoch_time": np.array(epoch_times)[-args.log_indent:].mean(),
 
-				"train_time per epoch": np.array(train_times)[-10:].mean(),
-				"connect checking time per epoch: ": np.array(connect_checking_times)[-10:].mean(),
-				"block generation time per epoch: ": np.array(block_gen_times)[-10:].mean(),
-				"batches generation time per epoch: ": np.array(batch_gen_times)[-10:].mean(),
-				"final_train_acc": final_train_acc,
-				"final_test_acc": final_test_acc}
+# 				"train_time per epoch": np.array(train_times)[-args.log_indent:].mean(),
+# 				"connect checking time per epoch: ": np.array(connect_checking_times)[-args.log_indent:].mean(),
+# 				"block generation time per epoch: ": np.array(block_gen_times)[-args.log_indent:].mean(),
+# 				"batches generation time per epoch: ": np.array(batch_gen_times)[-args.log_indent:].mean(),
+# 				"final_train_acc": final_train_acc,
+# 				"final_test_acc": final_test_acc}
 
-def parse_time_results(filename: str):
+def parse_time_results(filename: str, args):
 	OOM_flag=False
-	with open(filename) as f:
+	f, flag = clear(filename)
+		# print('-----------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+		# return
+	# with open(filename) as f:
+	if flag:
 		epoch_times = []
 		pure_train_times=[]
 		connect_checking_times=[]
@@ -99,6 +108,7 @@ def parse_time_results(filename: str):
 			if line.startswith("block generation total time"):
 				block_gen_times.append(float(line.split(' ')[-1]))
 			if line.startswith("average batch blocks generation time:"):
+				# print(line)
 				batch_gen_times.append(float(line.split(' ')[-1]))
 
 			
@@ -118,21 +128,21 @@ def parse_time_results(filename: str):
 				"load block tensor time per epoch": None,
 				"block to device time per epoch": None}
 		else:	
-			res={"epoch_time": np.array(epoch_times)[-10:].mean(),
-				"pure train_time per epoch": np.array(pure_train_times)[-10:].mean(),
+			res={"epoch_time": np.array(epoch_times)[-args.log_indent:].mean(),
+				"pure train_time per epoch": np.array(pure_train_times)[-args.log_indent:].mean(),
 				
-				"connect checking time per epoch: ": np.array(connect_checking_times)[-10:].mean(),
-				"block generation time per epoch: ": np.array(block_gen_times)[-10:].mean(),
-				"batches generation time per epoch: ": np.array(batch_gen_times)[-10:].mean(),
+				"connect checking time per epoch: ": np.array(connect_checking_times)[-args.log_indent:].mean(),
+				"block generation time per epoch: ": np.array(block_gen_times)[-args.log_indent:].mean(),
+				"batches generation time per epoch: ": np.array(batch_gen_times)[-args.log_indent:].mean(),
 
-				"first layer input nodes number per epoch": np.array(input_nodes_size)[-10:].mean(),
-				"first layer num_input nodes * in_feats per epoch": np.array(input_nodes_size)[-10:].mean()*infeat_size,
+				"first layer input nodes number per epoch": np.array(input_nodes_size)[-args.log_indent:].mean(),
+				"first layer num_input nodes * in_feats per epoch": np.array(input_nodes_size)[-args.log_indent:].mean()*infeat_size,
 
-				"logged input_features_size transfer (pointers* Bytes)": np.array(log_input_features_size)[-10:].mean()*1024*1024*1024,
-				"logged block_size_to_device transfer (pointers*  Bytes)": np.array(log_block_size_to_device)[-10:].mean()*1024*1024*1024,
+				"logged input_features_size transfer (pointers* Bytes)": np.array(log_input_features_size)[-args.log_indent:].mean()*1024*1024*1024,
+				"logged block_size_to_device transfer (pointers*  Bytes)": np.array(log_block_size_to_device)[-args.log_indent:].mean()*1024*1024*1024,
 
-				"load block tensor time per epoch": np.array(load_block_feature_label_times)[-10:].mean(),
-				"block to device time per epoch": np.array(block_to_device_times)[-10:].mean()
+				"load block tensor time per epoch": np.array(load_block_feature_label_times)[-args.log_indent:].mean(),
+				"block to device time per epoch": np.array(block_to_device_times)[-args.log_indent:].mean()
 			}
 		return res
 
@@ -142,10 +152,12 @@ def parse_time_results(filename: str):
 
 
 
-def parse_mem_results(filename: str):
+def parse_mem_results(filename: str, args):
+	f, flag = clear(filename)
+	# 	print('-----------~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
 	OOM_flag=False
-	with open(filename) as f:
-
+	# with open(filename) as f:
+	if flag:
 		nvidia_smi=[]
 		cuda_mem=[]
 		cuda_max_mem=[]
@@ -165,9 +177,9 @@ def parse_mem_results(filename: str):
 				"CUDA_mem": 'OOM',
 				"CUDA_max_mem": 'OOM',}
 		else:
-			res={"Nvidia-smi": np.array(nvidia_smi)[-10:].mean(),
-				"CUDA_mem": np.array(cuda_mem)[-10:].mean(),
-				"CUDA_max_mem": np.array(cuda_max_mem)[-10:].mean(),
+			res={"Nvidia-smi": np.array(nvidia_smi)[-args.log_indent:].mean(),
+				"CUDA_mem": np.array(cuda_mem)[-args.log_indent:].mean(),
+				"CUDA_max_mem": np.array(cuda_max_mem)[-args.log_indent:].mean(),
 				}
 
 		return res
@@ -185,14 +197,14 @@ def time_full(path,  file_in, color):
 			f = os.path.join(path, filename)
 			
 			if file_in in f:
-				res_ = parse_time_results(f)
+				res_ = parse_time_results(f,args)
 				
 				print(f)
 				res=colored(color[0],color[1],color[2],res_)
 				print(res)
 				return res_
 
-def GPU_mem_full(path,  file_in, color):
+def GPU_mem_full(path,  file_in, color, args):
 	# path = '../../my_full_graph/logs/sage/'
 	color=list(color)
 	for filename in os.listdir(path):
@@ -200,7 +212,7 @@ def GPU_mem_full(path,  file_in, color):
 			f = os.path.join(path, filename)
 			
 			if file_in in f:
-				res_ = parse_mem_results(f)
+				res_ = parse_mem_results(f, args)
 
 				print(f)
 				res=colored(color[0],color[1],color[2],res_)
@@ -208,7 +220,7 @@ def GPU_mem_full(path,  file_in, color):
 				return res_
 
 
-def time_(path,  file_in):
+def time_(path,  file_in,args):
 	# path = '../../my_full_graph/logs/sage/'
 	# color=list(color)
 	res_list=[]
@@ -217,7 +229,7 @@ def time_(path,  file_in):
 			f = os.path.join(path, filename)
 			
 			if file_in in f:
-				res_ = parse_time_results(f)
+				res_ = parse_time_results(f, args)
 				res_list.append(res_)
 				# print(f)
 				# res=colored(color[0],color[1],color[2],res_)
@@ -225,16 +237,16 @@ def time_(path,  file_in):
 	return res_list
 
 
-def time_one(path,  file_in, fan_out):
+def time_one(path,  file_in, fan_out, args):
 	for filename in os.listdir(path):
 		if filename.endswith(".log"):
 			f = os.path.join(path, filename)
 			if file_in in f and fan_out in f:
-				res = parse_time_results(f)
+				res = parse_time_results(f, args)
 				return res
 
 
-def GPU_mem(path,  file_in):
+def GPU_mem(path,  file_in, args):
 	# path = '../../my_full_graph/logs/sage/'
 	# color=list(color)
 	res_list=[]
@@ -245,21 +257,21 @@ def GPU_mem(path,  file_in):
 			if file_in in f:
 				fan_out=filename.split('_')[6]
 				# if not_out_of_memory_check(f):
-				res_ = parse_mem_results(f)
+				res_ = parse_mem_results(f, args)
 				res_list.append((fan_out,res_))
 				# print(f)
 				# res=colored(color[0],color[1],color[2],res_)
 				# print(res)
 	return res_list
 
-def GPU_mem_one(path,  file_in, fan_out):
+def GPU_mem_one(path,  file_in, fan_out, args):
 
 	for filename in os.listdir(path):
 		if filename.endswith(".log"):
 			f = os.path.join(path, filename)
 			
 			if file_in in f and fan_out in f:
-				res = parse_mem_results(f)
+				res = parse_mem_results(f, args)
 				nb=filename.split('_')[8] # number of batches
 				return res,nb
 	return False
@@ -339,11 +351,16 @@ def main():
 	argparser = argparse.ArgumentParser("info collection")
 	argparser.add_argument('--file', type=str, default='ogbn-arxiv',
 		help="the dataset name we want to collect")
+	# argparser.add_argument('--file', type=str, default='cora',
+		# help="the dataset name we want to collect")
 	argparser.add_argument('--model', type=str, default='sage')
 	argparser.add_argument('--aggre', type=str, default='mean')
+	argparser.add_argument('--num-layers', type=int, default=4)
+	argparser.add_argument('--hidden', type=int, default=32)
+	argparser.add_argument('--log-indent', type=int, default=1)
 	# argparser.add_argument('--aggre', type=str, default='lstm')
-	argparser.add_argument('--selection-method', type=str, default='random')
-	# argparser.add_argument('--selection-method', type=str, default='range')
+	# argparser.add_argument('--selection-method', type=str, default='random')
+	argparser.add_argument('--selection-method', type=str, default='range')
 	argparser.add_argument('--eval',type=bool, default=False)
 	argparser.add_argument('--epoch-ComputeEfficiency', type=bool, default=False)
 	argparser.add_argument('--epoch-PureTrainComputeEfficiency', type=bool, default=True)
@@ -352,20 +369,27 @@ def main():
 	file_in=args.file
 	model=args.model+'/'
 	path_1 = '../../full_batch_train/logs/'+model+'1_runs/'
-	path_2 = model+'1_runs/'
+	path_2 = './'+model+'1_runs/'
 	if args.eval:
 		path_1+='train_eval/'
 		path_2+='train_eval/'
 	else:
 		path_1+='pure_train/'
 		path_2+='pure_train/'
+	if 'ogbn' in args.file:
+		args.file = 'ogbn_'+args.file.split('-')[1]
+	path_1 += args.file   + '/' + args.aggre
+	path_2 += args.file  + '/' + args.aggre + '/' + args.selection_method
+	path_1 += '/layers_' + str(args.num_layers) + '/h_'+str(args.hidden)  +'/'
+	path_2 += '/layers_' + str(args.num_layers) + '/h_'+str(args.hidden)  +'/'
+	# path_1 += args.aggre +'/'
+	# path_2 += args.aggre +'/'+args.selection_method+'/'
+	# print(path_2)
+	# path_2='sage/1_runs/pure_train/cora/mean/random/layers_3/h_16/'
 	
-	
-	path_1 += args.aggre +'/'
-	path_2 += args.aggre +'/'+args.selection_method+'/'
 
-	tmp_m=GPU_mem(path_1, file_in)
-	tmp_t=time_(path_1, file_in)
+	tmp_m=GPU_mem(path_1, file_in, args)
+	tmp_t=time_(path_1, file_in, args)
 	for i, (fan_out, item) in enumerate(tmp_m):
 		res_full =[]
 		item.update(tmp_t[i])
@@ -386,11 +410,11 @@ def main():
 		for f_item in nb_folder_list:
 
 			path_r=path_2+f_item
-			tmp_m2=GPU_mem_one(path_r, file_in, fan_out)
+			tmp_m2=GPU_mem_one(path_r, file_in, fan_out, args)
 			if not tmp_m2:
 				continue
 			m2, num_batches = tmp_m2
-			t2=time_one(path_r, file_in, fan_out)
+			t2=time_one(path_r, file_in, fan_out, args)
 			m2.update(t2)
 			res.append(m2)
 			column_names+=['pseudo \n'+str(num_batches)+' batches \n'+fan_out]
@@ -406,7 +430,37 @@ def main():
 		df_res.to_csv(args.save_path + "time_and_mem.csv")
 
 
-
+def clear(infile):
+	# print(infile)
+	flag=True
+	f = open(infile,'r')
+	lst = []
+	prev=''
+	for line in f:
+		if  line.startswith('Using backend: pytorch') or 'pytorch' in line:
+			line = line.replace('Using backend: pytorch','')
+			flag=True
+		# elif 'pytorch' in line:
+		# 	line = line.replace('Using backend: pytorch','')
+		# 	prev = line
+		# 	line = '\n'
+		# 	flag=True
+		# if prev != '':
+		# 	line += prev
+		# 	flag=True
+		# 	prev=''
+		lst.append(line)
+	f.close()
+	if len(lst) == 0:
+		return [], False
+	
+	# f = open(infile,'w')
+	# for line in lst:
+	# 	f.write(line)
+	# f.close()
+	
+	return lst, flag
+	
 
 if __name__=='__main__':
 	# one_fan_out()
