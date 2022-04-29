@@ -19,7 +19,7 @@ import argparse
 import tqdm
 # import deepspeed
 import random
-from graphsage_model_products import GraphSAGE
+from graphsage_model_products_mem import GraphSAGE
 import dgl.function as fn
 from load_graph import load_reddit, inductive_split, load_ogb, load_cora, load_karate, prepare_data, load_pubmed
 from load_graph import load_ogbn_mag    ###### TODO
