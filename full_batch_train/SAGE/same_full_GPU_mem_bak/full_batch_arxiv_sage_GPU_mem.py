@@ -57,10 +57,10 @@ def set_seed(args):
 
 
 def save_full_batch(args, epoch,item):
-	newpath = r'../../DATA/re/fan_out_'+args.fan_out+'/'
+	newpath = r'../../../DATA/re/fan_out_'+args.fan_out+'/'
 	if not os.path.exists(newpath):
 		os.makedirs(newpath)
-	file_name=r'../../DATA/re/fan_out_'+args.fan_out+'/'+args.dataset+'_'+str(epoch)+'_items.pickle'
+	file_name=r'../../../DATA/re/fan_out_'+args.fan_out+'/'+args.dataset+'_'+str(epoch)+'_items.pickle'
 	# cwd = os.getcwd() 
 	with open(file_name, 'wb') as handle:
 		pickle.dump(item, handle, protocol=pickle.HIGHEST_PROTOCOL)
@@ -370,8 +370,10 @@ def main():
 	argparser.add_argument('--seed', type=int, default=1236)
 	argparser.add_argument('--setseed', type=bool, default=True)
 	argparser.add_argument('--GPUmem', type=bool, default=True)
-	argparser.add_argument('--load-full-batch', type=bool, default=True)
-	argparser.add_argument('--gen-full-batch', type=bool, default=False)
+	# argparser.add_argument('--load-full-batch', type=bool, default=True)
+	# argparser.add_argument('--gen-full-batch', type=bool, default=False)
+	argparser.add_argument('--load-full-batch', type=bool, default=False)
+	argparser.add_argument('--gen-full-batch', type=bool, default=True)
 	# argparser.add_argument('--root', type=str, default='../my_full_graph/')
 	argparser.add_argument('--dataset', type=str, default='ogbn-arxiv')
 	# argparser.add_argument('--dataset', type=str, default='ogbn-mag')
