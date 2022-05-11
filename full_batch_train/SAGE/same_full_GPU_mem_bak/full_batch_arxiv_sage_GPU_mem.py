@@ -386,7 +386,7 @@ def main():
 	
 	argparser.add_argument('--balanced_init_ratio', type=float, default=0.2)
 	argparser.add_argument('--num-runs', type=int, default=1)
-	argparser.add_argument('--num-epochs', type=int, default=1)
+	argparser.add_argument('--num-epochs', type=int, default=3)
 	# argparser.add_argument('--num-runs', type=int, default=10)
 	# argparser.add_argument('--num-epochs', type=int, default=500)
 	argparser.add_argument('--num-hidden', type=int, default=256)
@@ -397,7 +397,7 @@ def main():
 	argparser.add_argument('--fan-out', type=str, default='10')
 
 #---------------------------------------------------------------------------------------
-	argparser.add_argument('--num_batch', type=int, default=0)
+	argparser.add_argument('--num_batch', type=int, default=1)
 	# argparser.add_argument('--batch-size', type=int, default=2) # karate
 	# argparser.add_argument('--batch-size', type=int, default=70) # cora
 	# argparser.add_argument('--batch-size', type=int, default=30) # pubmed
