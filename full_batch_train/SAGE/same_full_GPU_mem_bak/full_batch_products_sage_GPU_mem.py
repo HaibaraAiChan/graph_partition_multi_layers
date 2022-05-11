@@ -233,7 +233,7 @@ def run(args, device, data):
 				see_memory_usage("----------------------------------------before full batch dataloader ")
 			if args.load_full_batch:
 				full_batch_dataloader=[]
-				file_name=r'../../DATA/re/fan_out_'+args.fan_out+'/'+args.dataset+'_'+str(epoch)+'_items.pickle'
+				file_name=r'../../../DATA/re/fan_out_'+args.fan_out+'/'+args.dataset+'_'+str(epoch)+'_items.pickle'
 				with open(file_name, 'rb') as handle:
 					item=pickle.load(handle)
 					full_batch_dataloader.append(item)
