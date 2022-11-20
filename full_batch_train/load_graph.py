@@ -397,38 +397,35 @@ def load_ogbn_dataset(name,  args):
 		return g, labels, n_classes, train_nid, val_nid, test_nid, evaluator
 
 
-
-
 def load_karate():
 	from dgl.data import KarateClubDataset
 
 	# load Karate data
-	data = KarateClubDataset()
-	g = data[0]
+	# data = KarateClubDataset()
+	# g = data[0]
+	u=torch.tensor([0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 1, 5, 3])
+	v=torch.tensor([1, 0, 2, 3, 4, 1, 3, 4, 2, 4, 3, 5, 1, 6])
+	g=dgl.graph((u, v),num_nodes=7)
 	print('karate data')
-	# print(data[0].ndata)
-	# print(data[0].edata)
+	print(g.ndata)
+	print(g.edata)
+
+	
 	ndata=[]
-	for nid in range(34):
+	for nid in range(7):
 		ndata.append((th.ones(4)*nid).tolist())
 	ddd = {'feat': th.tensor(ndata)}
-
+	g.ndata['label']=torch.tensor([0,1,0,1,0,1,1])
 	g.ndata['feat'] = ddd['feat']
+	print(g)
+
+	
+
 	# print(data[0].ndata)
 	# g.ndata['labels'] = g.ndata['label']
-	
-	# train = [True]*24 + [False]*10
-	# val = [False] * 24 + [True] * 5 + [False] * 5
-	# test = [False] * 24 + [False] * 5 + [True] * 5
-	# train = [True]*4 + [False]*30
-	# val = [False] * 4 + [True] * 10 + [False] * 20
-	# test = [False] * 4 + [False] * 10 + [True] * 20
-	# train = [True]*24 + [False]*10
-	# val = [False] * 24 + [True] * 5 + [False] * 5
-	# test = [False] * 24 + [False] * 5 + [True] * 5
-	train_nid = th.tensor(range(0,24))
-	val_nid = th.tensor(range(24,29))
-	test_nid = th.tensor(range(29, 34))
+	train_nid = th.tensor(range(0,4))
+	val_nid = th.tensor(range(4,6))
+	test_nid = th.tensor(range(6, 7))
 
 	train_mask = torch.zeros((g.number_of_nodes(),), dtype=torch.bool)
 	train_mask[train_nid] = True
@@ -440,7 +437,51 @@ def load_karate():
 	g.ndata['val_mask'] = val_mask
 	g.ndata['test_mask'] = test_mask
 
-	return g, data.num_classes
+	return g, 2
+
+
+# def load_karate():
+# 	from dgl.data import KarateClubDataset
+
+# 	# load Karate data
+# 	data = KarateClubDataset()
+# 	g = data[0]
+# 	print('karate data')
+# 	# print(data[0].ndata)
+# 	# print(data[0].edata)
+# 	ndata=[]
+# 	for nid in range(34):
+# 		ndata.append((th.ones(4)*nid).tolist())
+# 	ddd = {'feat': th.tensor(ndata)}
+
+# 	g.ndata['feat'] = ddd['feat']
+# 	# print(data[0].ndata)
+# 	# g.ndata['labels'] = g.ndata['label']
+	
+# 	# train = [True]*24 + [False]*10
+# 	# val = [False] * 24 + [True] * 5 + [False] * 5
+# 	# test = [False] * 24 + [False] * 5 + [True] * 5
+# 	# train = [True]*4 + [False]*30
+# 	# val = [False] * 4 + [True] * 10 + [False] * 20
+# 	# test = [False] * 4 + [False] * 10 + [True] * 20
+# 	# train = [True]*24 + [False]*10
+# 	# val = [False] * 24 + [True] * 5 + [False] * 5
+# 	# test = [False] * 24 + [False] * 5 + [True] * 5
+# 	train_nid = th.tensor(range(0,24))
+# 	val_nid = th.tensor(range(24,29))
+# 	test_nid = th.tensor(range(29, 34))
+
+# 	train_mask = torch.zeros((g.number_of_nodes(),), dtype=torch.bool)
+# 	train_mask[train_nid] = True
+# 	val_mask = torch.zeros((g.number_of_nodes(),), dtype=torch.bool)
+# 	val_mask[val_nid] = True
+# 	test_mask = torch.zeros((g.number_of_nodes(),), dtype=torch.bool)
+# 	test_mask[test_nid] = True
+# 	g.ndata['train_mask'] = train_mask
+# 	g.ndata['val_mask'] = val_mask
+# 	g.ndata['test_mask'] = test_mask
+
+# 	return g, data.num_classes
 
 def load_pubmed():
 	from dgl.data import PubmedGraphDataset
@@ -476,7 +517,7 @@ def load_reddit():
 	g = dgl.remove_self_loop(g)
 	return g, data.num_classes
 
-def load_ogb(name):
+def load_ogb(name, args):
 	home_dir = os.getenv("HOME")
 	data = DglNodePropPredDataset(name=name, root=os.path.join(home_dir, "graph_partition_multi_layers/benchmark_full_graph", "dataset"))
 	
